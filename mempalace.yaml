@@ -1,0 +1,32 @@
+wing: workspace_neirong
+rooms:
+- name: memory
+  description: Files from memory/
+- name: images
+  description: Files from images/
+- name: research
+  description: Files from references/
+- name: output
+  description: Files from output/
+- name: shared
+  description: Files from shared/
+- name: logs
+  description: Files from logs/
+- name: knowledge
+  description: Files from knowledge/
+- name: scripts
+  description: Files from scripts/
+- name: skills
+  description: Files from skills/
+- name: downloads
+  description: Files from downloads/
+- name: tmp
+  description: Files from tmp/
+- name: image_library
+  description: Files from image-library/
+- name: handoffs
+  description: Files from handoffs/
+- name: documentation
+  description: Files from wiki/
+- name: general
+  description: Files that don't fit other rooms

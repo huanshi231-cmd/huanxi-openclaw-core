@@ -1,0 +1,12 @@
+wing: memory
+rooms:
+- name: shared
+  description: Files from shared/
+- name: done
+  description: Files from DONE/
+- name: structured
+  description: Files from structured/
+- name: pending
+  description: Files from PENDING/
+- name: general
+  description: Files that don't fit other rooms

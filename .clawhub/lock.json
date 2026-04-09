@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "skills": {
+    "self-improving-with-reflection": {
+      "version": "1.2.11",
+      "installedAt": 1775014642951
+    },
+    "hamster-self-improving": {
+      "version": "1.2.9",
+      "installedAt": 1775014700992
+    },
+    "ffmpeg-add-subtitle": {
+      "version": "1.0.0",
+      "installedAt": 1775050802205
+    },
+    "movie-subtitle-generator": {
+      "version": "1.0.0",
+      "installedAt": 1775050807299
+    },
+    "ima-ai-video-generator": {
+      "version": "1.0.6",
+      "installedAt": 1775050864712
+    },
+    "bilibili-youtube-watcher": {
+      "version": "1.0.0",
+      "installedAt": 1775051908441
+    },
+    "youtube-shorts-automation": {
+      "version": "1.0.0",
+      "installedAt": 1775051954036
+    },
+    "deep-thinking": {
+      "version": "1.0.0",
+      "installedAt": 1775491545479
+    },
+    "video-editing-with-ai": {
+      "version": "1.0.1",
+      "installedAt": 1775570209318
+    }
+  }
+}

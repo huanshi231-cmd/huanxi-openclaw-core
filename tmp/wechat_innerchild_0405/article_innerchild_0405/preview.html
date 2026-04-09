@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>你没有在闹脾气，你只是在等一个人看见你 - 微信排版预览</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f0f0f0;
+    min-height: 100vh;
+}
+.toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.toolbar-info {
+    font-size: 13px;
+    color: #666;
+}
+.toolbar-info span {
+    margin-right: 12px;
+}
+.toolbar-info .theme-name {
+    background: #f5f5f5;
+    padding: 2px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+    color: #333;
+}
+.copy-btn {
+    padding: 10px 24px;
+    background: #07c160;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 1px;
+}
+.copy-btn:hover { background: #06ae56; transform: translateY(-1px); }
+.copy-btn:active { transform: translateY(0); }
+.copy-btn.copied {
+    background: #34c759;
+}
+.phone-frame {
+    max-width: 415px;
+    margin: 76px auto 40px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+.phone-header {
+    background: #ededed;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: #999;
+    border-bottom: 1px solid #e0e0e0;
+}
+.article-content {
+    padding: 20px;
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+/* 隐藏的纯微信 HTML，用于复制 */
+#wechatHtml {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+}
+/* ── Font Size Selector ── */
+.font-size-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 12px auto;
+    padding: 8px 0;
+    max-width: 415px;
+}
+.fs-label {
+    font-size: 13px;
+    color: #999;
+}
+.fs-btn {
+    padding: 4px 12px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    background: #fff;
+    font-size: 13px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+.fs-btn:hover {
+    border-color: #07C160;
+    color: #07C160;
+}
+.fs-btn.active {
+    background: #07C160;
+    border-color: #07C160;
+    color: #fff;
+}
+@media (max-width: 480px) {
+    .phone-frame {
+        margin: 60px 0 20px;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    .toolbar {
+        padding: 8px 12px;
+    }
+    .copy-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+    <div class="toolbar-left">
+        <div class="toolbar-info">
+            <span class="theme-name">赤陶</span>
+            <span>1,317 字</span>
+        </div>
+    </div>
+    <button class="copy-btn" onclick="copyToWechat()">复制到微信</button>
+</div>
+
+<div class="font-size-selector">
+    <span class="fs-label">字号</span>
+    <button class="fs-btn active" data-size="15" onclick="switchFontSize(15)">15px</button>
+    <button class="fs-btn" data-size="16" onclick="switchFontSize(16)">16px</button>
+</div>
+
+<div class="phone-frame">
+    <div class="phone-header">微信公众号预览</div>
+    <div class="article-content" id="articleContent">
+<section style="background-color:#ffffff;padding:16px" data-darkmode-bgcolor="#1e1e1e"><h1 style="font-size:22px;font-weight:bold;color:#ffffff;text-align:center;background:#C86442;border-radius:8px;padding:12px 24px;margin-top:24px;margin-bottom:12px;line-height:1.2;box-shadow:0 2px 8px rgba(200,100,66,0.2)" data-darkmode-bgcolor="#A85636" data-darkmode-color="#ffffff">你没有在闹脾气，你只是在等一个人看见你</h1>
+<hr style="margin-top:32px;margin-bottom:32px;height:1px;background:linear-gradient(to right, rgba(200,100,66,0), rgba(200,100,66,0.6), rgba(200,100,66,0));border:none">
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你有没有过这种时刻——</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">明明是一件很小的事，你却突然崩溃了。<br />
+眼泪掉下来的时候，你自己都吓了一跳。<br />
+你会骂自己：至于吗？至于。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">但那个「至于」的背后，藏着一个很小很小的你。<br />
+她不是任性。她是太久没有被好好对待了。</p>
+<h2 style="font-size:20px;font-weight:bold;color:#3F3F3F;border-left:4px solid #C86442;border-bottom:1px dashed #C86442;padding:0 0 8px 12px;margin-top:32px;margin-bottom:12px;line-height:1.2" data-darkmode-color="#D4825E">🌙 01</h2>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">心理学上有一个词，叫「内在小孩」。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">不是你真的生过小孩，而是你心里那个受伤的、没有被满足的、一直停在某个人生阶段的自己。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">可能是因为小时候父母太忙，你学会了不哭不闹。<br />
+可能是因为你表达了需求，却被告知「不要那么娇气」。<br />
+可能是因为家里气氛总是很紧张，你很小就学会看脸色。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">那个小小的你，把真实的感受收起来，把自己缩进壳里。<br />
+她学会了：表达需求是不安全的，软弱是会受伤的。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">然后你长大了。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你有了工作，有了伴侣，有了看起来还不错的生活。<br />
+但总有一些时刻，你会觉得自己像被什么困住了——<br />
+明明可以好好说话的，你却突然暴怒；<br />
+明明想靠近的，你却推开对方；<br />
+明明已经得到很多的，你却还是觉得空。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你以为是你性格有问题。<br />
+但其实是那个小女孩，还在那个角落里，等你回去接她。</p>
+<h2 style="font-size:20px;font-weight:bold;color:#3F3F3F;border-left:4px solid #C86442;border-bottom:1px dashed #C86442;padding:0 0 8px 12px;margin-top:32px;margin-bottom:12px;line-height:1.2" data-darkmode-color="#D4825E">💭 02</h2>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">怎么判断你的内在小孩还在受伤？</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">有一个很简单的方法——</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">注意你被否定时的反应。<br />
+如果对方一个眼神、一句话，就能让你整个晚上睡不着，反复回想自己哪里做错了——<br />
+那个反应不是现在的你做出的，是那个小女孩。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">她太害怕被抛弃了，所以她把所有的错都揽到自己身上。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">还有一种情况也很常见：<br />
+你在关系里总是过度付出。<br />
+你拼命对对方好，好到失去自己，好到委屈、愤怒、然后爆发。<br />
+爆发完之后你又后悔，觉得自己「太作了」。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">但真相是——<br />
+你在用付出来换取被爱。<br />
+因为你小时候没有被无条件爱过，所以你以为爱是需要交换的。<br />
+而当交换不对等的时候，那个小女孩就会跳出来，用愤怒来表达她的绝望：</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">「我已经那么努力了，为什么你还是不爱我？」</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">这不是作。<br />
+这是创伤。</p>
+<h2 style="font-size:20px;font-weight:bold;color:#3F3F3F;border-left:4px solid #C86442;border-bottom:1px dashed #C86442;padding:0 0 8px 12px;margin-top:32px;margin-bottom:12px;line-height:1.2" data-darkmode-color="#D4825E">✨ 03</h2>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">好消息是，内在小孩的伤，是可以被疗愈的。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">不是靠别人来治愈你，是靠你回去接住她。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">第一步，是看见她。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">下次当你因为一件小事突然崩溃的时候，试着停下来，问自己：<br />
+「这个反应，跟现在的情境匹配吗？」<br />
+「如果我回到5岁、8岁，遇到同样的事情，我会怎么想？」</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你可能会发现——<br />
+那些让你崩溃的，从来不是当下的那件事。<br />
+而是那件事，触发了很久以前的一个伤口。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">第二步，是允许她表达。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">很多人不敢让自己的内在小孩出来，因为觉得「那太软弱了」。<br />
+但疗愈的关键，不是压制她，是让她被听见。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你可以试着跟自己对话：<br />
+「我看到你了。我知道你在害怕。你想说什么？」<br />
+然后等一等，看看心里会出现什么。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">有的人会哭，有的人会愤怒，有的人会想起一些很遥远的记忆。<br />
+都是正常的。那个小女孩终于有人听了。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">第三步，是重新养她一遍。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">问问她：你小时候最想要什么？<br />
+有的孩子想要拥抱，有的想要被肯定，有的想要一个不被评判的空间。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">然后，现在的你，每天给她一点。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">今天累了，就休息。不是必须一直撑着。<br />
+今天想哭，就哭。不是必须坚强。<br />
+今天想被人抱，就告诉身边的人。不是必须独自扛。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你不是在做「溺爱自己」这件事。<br />
+你是在补偿一个等了太久的、饿坏了的小孩。</p>
+<h2 style="font-size:20px;font-weight:bold;color:#3F3F3F;border-left:4px solid #C86442;border-bottom:1px dashed #C86442;padding:0 0 8px 12px;margin-top:32px;margin-bottom:12px;line-height:1.2" data-darkmode-color="#D4825E">🌊 04</h2>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">我知道很多人会说：「我都这么大了，还要回去疗愈这些，有用吗？」</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">有用的。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">因为你心里那个小女孩，永远都在。<br />
+她不会因为你忽略她就消失，她只会越来越大声地呼唤你——<br />
+用愤怒、用抑郁、用焦虑、用反复的自我否定。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">而每一次你选择回去看见她，你都在告诉她：<br />
+「我不会再丢下你了。」<br />
+「你的感受是重要的。」<br />
+「你值得被好好对待。」</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">这不是软弱。<br />
+这是真正的长大。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">所以下次有人说你「想太多」「太敏感」「在闹脾气」——<br />
+你可以温柔地回答他们：</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">「不。我只是在等一个人，看见我。」</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">而那个人，最终是你自己。</p>
+<hr style="margin-top:32px;margin-bottom:32px;height:1px;background:linear-gradient(to right, rgba(200,100,66,0), rgba(200,100,66,0.6), rgba(200,100,66,0));border:none">
+<section style="background:rgba(16,185,129,0.06);border-left:4px solid #10b981;padding:16px;margin-top:16px;margin-bottom:16px;border-radius:0 12px 12px 0"><p style="font-weight:bold;color:#10b981;margin-bottom:8px;font-size:15px">💡 如果你也有一个受伤的内在小孩</p><p style="font-size:14px;color:#3F3F3F;line-height:1.8;letter-spacing:0.3px" data-darkmode-color="#c0c0c0">记住：看见她，就是疗愈的开始。不需要一下子把所有伤口都清理干净，每天给她一点光，就够了。</p></section>
+
+<section style="background:rgba(200,100,66,0.08);border-left:4px solid #C86442;padding:16px;margin-top:16px;margin-bottom:16px;border-radius:0 12px 12px 0" data-darkmode-bgcolor="rgba(200,100,66,0.12)"><p style="font-weight:bold;color:#C86442;margin-bottom:8px;font-size:15px">✨ 你不是性格有问题，你只是还有一个没被治愈的小孩。</p><p style="font-size:14px;color:#3F3F3F;line-height:1.8;letter-spacing:0.3px" data-darkmode-color="#c0c0c0"></p></section></section>
+    </div>
+</div>
+
+<!-- 隐藏区域：存放纯微信 HTML（不含预览壳样式），复制时用这个 -->
+<div id="wechatHtml">
+<section style="background-color:#ffffff;padding:16px" data-darkmode-bgcolor="#1e1e1e"><h1 style="font-size:22px;font-weight:bold;color:#ffffff;text-align:center;background:#C86442;border-radius:8px;padding:12px 24px;margin-top:24px;margin-bottom:12px;line-height:1.2;box-shadow:0 2px 8px rgba(200,100,66,0.2)" data-darkmode-bgcolor="#A85636" data-darkmode-color="#ffffff">你没有在闹脾气，你只是在等一个人看见你</h1>
+<hr style="margin-top:32px;margin-bottom:32px;height:1px;background:linear-gradient(to right, rgba(200,100,66,0), rgba(200,100,66,0.6), rgba(200,100,66,0));border:none">
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你有没有过这种时刻——</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">明明是一件很小的事，你却突然崩溃了。<br />
+眼泪掉下来的时候，你自己都吓了一跳。<br />
+你会骂自己：至于吗？至于。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">但那个「至于」的背后，藏着一个很小很小的你。<br />
+她不是任性。她是太久没有被好好对待了。</p>
+<h2 style="font-size:20px;font-weight:bold;color:#3F3F3F;border-left:4px solid #C86442;border-bottom:1px dashed #C86442;padding:0 0 8px 12px;margin-top:32px;margin-bottom:12px;line-height:1.2" data-darkmode-color="#D4825E">🌙 01</h2>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">心理学上有一个词，叫「内在小孩」。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">不是你真的生过小孩，而是你心里那个受伤的、没有被满足的、一直停在某个人生阶段的自己。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">可能是因为小时候父母太忙，你学会了不哭不闹。<br />
+可能是因为你表达了需求，却被告知「不要那么娇气」。<br />
+可能是因为家里气氛总是很紧张，你很小就学会看脸色。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">那个小小的你，把真实的感受收起来，把自己缩进壳里。<br />
+她学会了：表达需求是不安全的，软弱是会受伤的。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">然后你长大了。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你有了工作，有了伴侣，有了看起来还不错的生活。<br />
+但总有一些时刻，你会觉得自己像被什么困住了——<br />
+明明可以好好说话的，你却突然暴怒；<br />
+明明想靠近的，你却推开对方；<br />
+明明已经得到很多的，你却还是觉得空。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你以为是你性格有问题。<br />
+但其实是那个小女孩，还在那个角落里，等你回去接她。</p>
+<h2 style="font-size:20px;font-weight:bold;color:#3F3F3F;border-left:4px solid #C86442;border-bottom:1px dashed #C86442;padding:0 0 8px 12px;margin-top:32px;margin-bottom:12px;line-height:1.2" data-darkmode-color="#D4825E">💭 02</h2>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">怎么判断你的内在小孩还在受伤？</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">有一个很简单的方法——</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">注意你被否定时的反应。<br />
+如果对方一个眼神、一句话，就能让你整个晚上睡不着，反复回想自己哪里做错了——<br />
+那个反应不是现在的你做出的，是那个小女孩。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">她太害怕被抛弃了，所以她把所有的错都揽到自己身上。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">还有一种情况也很常见：<br />
+你在关系里总是过度付出。<br />
+你拼命对对方好，好到失去自己，好到委屈、愤怒、然后爆发。<br />
+爆发完之后你又后悔，觉得自己「太作了」。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">但真相是——<br />
+你在用付出来换取被爱。<br />
+因为你小时候没有被无条件爱过，所以你以为爱是需要交换的。<br />
+而当交换不对等的时候，那个小女孩就会跳出来，用愤怒来表达她的绝望：</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">「我已经那么努力了，为什么你还是不爱我？」</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">这不是作。<br />
+这是创伤。</p>
+<h2 style="font-size:20px;font-weight:bold;color:#3F3F3F;border-left:4px solid #C86442;border-bottom:1px dashed #C86442;padding:0 0 8px 12px;margin-top:32px;margin-bottom:12px;line-height:1.2" data-darkmode-color="#D4825E">✨ 03</h2>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">好消息是，内在小孩的伤，是可以被疗愈的。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">不是靠别人来治愈你，是靠你回去接住她。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">第一步，是看见她。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">下次当你因为一件小事突然崩溃的时候，试着停下来，问自己：<br />
+「这个反应，跟现在的情境匹配吗？」<br />
+「如果我回到5岁、8岁，遇到同样的事情，我会怎么想？」</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你可能会发现——<br />
+那些让你崩溃的，从来不是当下的那件事。<br />
+而是那件事，触发了很久以前的一个伤口。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">第二步，是允许她表达。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">很多人不敢让自己的内在小孩出来，因为觉得「那太软弱了」。<br />
+但疗愈的关键，不是压制她，是让她被听见。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你可以试着跟自己对话：<br />
+「我看到你了。我知道你在害怕。你想说什么？」<br />
+然后等一等，看看心里会出现什么。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">有的人会哭，有的人会愤怒，有的人会想起一些很遥远的记忆。<br />
+都是正常的。那个小女孩终于有人听了。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">第三步，是重新养她一遍。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">问问她：你小时候最想要什么？<br />
+有的孩子想要拥抱，有的想要被肯定，有的想要一个不被评判的空间。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">然后，现在的你，每天给她一点。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">今天累了，就休息。不是必须一直撑着。<br />
+今天想哭，就哭。不是必须坚强。<br />
+今天想被人抱，就告诉身边的人。不是必须独自扛。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">你不是在做「溺爱自己」这件事。<br />
+你是在补偿一个等了太久的、饿坏了的小孩。</p>
+<h2 style="font-size:20px;font-weight:bold;color:#3F3F3F;border-left:4px solid #C86442;border-bottom:1px dashed #C86442;padding:0 0 8px 12px;margin-top:32px;margin-bottom:12px;line-height:1.2" data-darkmode-color="#D4825E">🌊 04</h2>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">我知道很多人会说：「我都这么大了，还要回去疗愈这些，有用吗？」</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">有用的。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">因为你心里那个小女孩，永远都在。<br />
+她不会因为你忽略她就消失，她只会越来越大声地呼唤你——<br />
+用愤怒、用抑郁、用焦虑、用反复的自我否定。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">而每一次你选择回去看见她，你都在告诉她：<br />
+「我不会再丢下你了。」<br />
+「你的感受是重要的。」<br />
+「你值得被好好对待。」</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">这不是软弱。<br />
+这是真正的长大。</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">所以下次有人说你「想太多」「太敏感」「在闹脾气」——<br />
+你可以温柔地回答他们：</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">「不。我只是在等一个人，看见我。」</p>
+<p style="font-size:15px;color:#222222;line-height:1.75;margin-top:0;margin-bottom:20px;letter-spacing:0.5px;text-align:left" data-darkmode-color="#c8c8c8">而那个人，最终是你自己。</p>
+<hr style="margin-top:32px;margin-bottom:32px;height:1px;background:linear-gradient(to right, rgba(200,100,66,0), rgba(200,100,66,0.6), rgba(200,100,66,0));border:none">
+<section style="background:rgba(16,185,129,0.06);border-left:4px solid #10b981;padding:16px;margin-top:16px;margin-bottom:16px;border-radius:0 12px 12px 0"><p style="font-weight:bold;color:#10b981;margin-bottom:8px;font-size:15px">💡 如果你也有一个受伤的内在小孩</p><p style="font-size:14px;color:#3F3F3F;line-height:1.8;letter-spacing:0.3px" data-darkmode-color="#c0c0c0">记住：看见她，就是疗愈的开始。不需要一下子把所有伤口都清理干净，每天给她一点光，就够了。</p></section>
+
+<section style="background:rgba(200,100,66,0.08);border-left:4px solid #C86442;padding:16px;margin-top:16px;margin-bottom:16px;border-radius:0 12px 12px 0" data-darkmode-bgcolor="rgba(200,100,66,0.12)"><p style="font-weight:bold;color:#C86442;margin-bottom:8px;font-size:15px">✨ 你不是性格有问题，你只是还有一个没被治愈的小孩。</p><p style="font-size:14px;color:#3F3F3F;line-height:1.8;letter-spacing:0.3px" data-darkmode-color="#c0c0c0"></p></section></section>
+</div>
+
+<script>
+function switchFontSize(size) {
+    // 更新按钮状态
+    document.querySelectorAll('.fs-btn').forEach(function(btn) {
+        if (parseInt(btn.dataset.size) === size) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+
+    // 修改可见预览区和隐藏复制区的 p 标签
+    ['articleContent', 'wechatHtml'].forEach(function(id) {
+        var container = document.getElementById(id);
+        if (!container) return;
+        container.querySelectorAll('p').forEach(function(p) {
+            var currentSize = parseInt(window.getComputedStyle(p).fontSize);
+            if (currentSize >= 14 && currentSize <= 16) {
+                p.style.fontSize = size + 'px';
+                p.style.lineHeight = size === 16 ? '1.75' : '1.8';
+            }
+        });
+        // 修改列表项文字
+        container.querySelectorAll('[style*="font-size:15px"]').forEach(function(el) {
+            if (el.tagName === 'SPAN' || el.tagName === 'SECTION') {
+                el.style.fontSize = size + 'px';
+            }
+        });
+    });
+
+    // 保存选择到 localStorage
+    localStorage.setItem('wechat-format-fontsize', size);
+}
+
+// 页面加载时恢复上次选择
+document.addEventListener('DOMContentLoaded', function() {
+    var saved = localStorage.getItem('wechat-format-fontsize');
+    if (saved && saved !== '15') {
+        switchFontSize(parseInt(saved));
+    }
+});
+
+function copyToWechat() {
+    const source = document.getElementById('wechatHtml');
+    const range = document.createRange();
+    range.selectNodeContents(source);
+
+    // 临时让元素可见（否则某些浏览器不允许复制隐藏元素）
+    source.style.position = 'fixed';
+    source.style.left = '0';
+    source.style.top = '0';
+    source.style.opacity = '0.01';
+    source.style.width = '375px';
+
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+
+    try {
+        document.execCommand('copy');
+        const btn = document.querySelector('.copy-btn');
+        btn.textContent = '已复制!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+            btn.textContent = '复制到微信';
+            btn.classList.remove('copied');
+        }, 2500);
+    } catch(e) {
+        // fallback: 尝试 Clipboard API
+        const html = source.innerHTML;
+        const blob = new Blob([html], { type: 'text/html' });
+        const item = new ClipboardItem({ 'text/html': blob });
+        navigator.clipboard.write([item]).then(() => {
+            const btn = document.querySelector('.copy-btn');
+            btn.textContent = '已复制!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = '复制到微信';
+                btn.classList.remove('copied');
+            }, 2500);
+        }).catch(() => {
+            alert('复制失败，请手动选中文章内容复制');
+        });
+    }
+
+    // 恢复隐藏
+    source.style.position = 'absolute';
+    source.style.left = '-9999px';
+    source.style.top = '-9999px';
+    source.style.opacity = '';
+    source.style.width = '';
+
+    sel.removeAllRanges();
+}
+</script>
+</body>
+</html>

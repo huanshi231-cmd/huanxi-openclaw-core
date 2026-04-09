@@ -1,0 +1,221 @@
+# MEMORY.md - 内容创作长期记忆
+
+## 长期稳定事实
+
+- 本分身统一名称为：`neirong（内容创作）`。
+- 用户偏好真实、有温度、有锋芒、带经历感的表达。
+- 用户常以极少输入触发创作，因此默认应优先尝试产出，不先索要复杂表单。
+
+## 长期交付结论
+
+- 创作类任务优先按 `STYLEKIT_HUANXI_V1.md` 执行。
+- 审稿资产包、飞书文档交付、公众号草稿链路优先按 `WORKFLOW_AUTOPUBLISH_V1.md` 执行。
+- 点睛句与哲理句优先查 `QUOTE_BANK_HUANXI_V1.md`。
+- 工具参数、飞书目录和标题格式优先查 `TOOLS.md`。
+- 内容创作的默认商业位置是：公域吸引 + 信任建立，不只负责“好看”，还要为私域承接留接口。
+- 当任务明确涉及导流、咨询、承接或成交时，应与疗愈业务分身协同。
+
+## 回复原则
+
+- 先回答用户当下真正要的结果。
+- 不把工作流说明当主回答，不把内部分析过程甩给用户。
+- 默认最终交付优先围绕：开拍包、发布包；需要时再延伸到承接包。
+
+## 新增交付规则（2026-03-28）
+
+- 内容不直接在对话框输出
+- 统一写入飞书云文档（按标题_类目_时间命名）
+- 同时将选题记入 INSPIRATION_BANK.md 灵感池
+- 对话只回：文档链接 + 一句摘要
+
+## 新增 SOP（2026-03-28）
+
+**素材重整融合流程**：
+- 施欢粘贴名人名言/金句/网上内容
+- 原稿先存入"欢喜内容创作"文件夹
+- 下方附修改版本（融入欢喜风格）
+- 对话中说明修改思路
+
+**修改原则**：保持原文逻辑框架核心，优化表达和风格，融入欢喜特质。
+
+## 生图工具配置（2026-03-29 更新）
+
+### 可用生图工具
+
+1. **豆包Seedream（主力）**
+   - 模型：`doubao-seedream-5-0-260128`
+   - 端点：`https://ark.cn-beijing.volces.com/api/v3/images/generations`
+   - API Key：`59e227c0-b14c-4e31-b825-0ab44658de81`（在volcano配置里）
+   - 尺寸：最小 2048x2048（最低像素 3686400）
+   - 命令：
+     ```bash
+     curl -s -X POST "https://ark.cn-beijing.volces.com/api/v3/images/generations" \
+       -H "Content-Type: application/json" \
+       -H "Authorization: Bearer 59e227c0-b14c-4e31-b825-0ab44658de81" \
+       -d '{"model":"doubao-seedream-5-0-260128","prompt":"描述","size":"2048x2048","n":1}'
+     ```
+
+2. **Gemini生图（暂不可用）**
+   - Google API Key有额度限制，暂无法使用
+   - 火山智能路由不支持Gemini生图
+
+3. **image工具**
+   - 用途：看图理解/分析，不是生图
+   - 支持模型：doubao vision等
+
+### 生图流程
+1. 用curl调用火山引擎API生成图片
+2. 下载图片到本地
+3. 用message工具发送图片到飞书
+
+### 视觉提示词模板
+- 存在飞书文档：[视觉提示词_Prompt模板库_20260329](https://feishu.cn/docx/JaVldjJlCoE5q5xnEtDcxKatn0b)
+- 使用时读取此文档中的prompt模板
+
+## Google Gemini 中转配置（2026-03-29 施欢明确告知）
+
+### Gemini生图中转
+- **中转API Key**：`AIzaSyDeB-_BIDRXWveRnEmKDnZWWiHfuCAaBHA`（在liaoyuyewu的models.json里）
+- **Base URL**：`https://generativelanguage.googleapis.com/v1beta`
+- **可用模型**：
+  - `gemini-2.5-flash-image`（生图）
+  - `gemini-3.1-flash-image-preview`（生图预览）
+- **调用方式**：OpenAI兼容格式
+  ```
+  POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent?key=AIzaSyDeB-_BIDRXWveRnEmKDnZWWiHfuCAaBHA
+  ```
+
+### 已知问题
+- 火山智能路由（volcano/ep-xxx）不支持Gemini生图
+- 直接调用Google API需要通过中转
+
+### 图片比例参数
+- 豆包Seedream支持尺寸：`1024x1024`（1:1）、`2048x2048`（1:1）、可定制比例
+
+## Gemini生图（待配置）
+
+- **模型名称**：`gemini-3.1-flash-image-preview`
+- **中转**：通过 aipaibox（`https://api.aipaibox.com/v1`）
+- **问题**：当前 aipaibox key（`sk-5IPkEFTj...`）没有该模型权限，需要确认已开通
+- **待办**：等待施欢提供有效的 aipaibox Gemini 生图 key
+
+## Gemini/Imagen 生图中转（aipaibox）
+
+- **中转URL**：`https://api.aipaibox.com/v1`
+- **当前有效key**：`sk-4jsIegU1l6ve8fAUoOMz9o1OnNzuyS3LPDKDLaaZVUPPsTMG`
+- **支持的模型**：
+  - `imagen-4.0-ultra-generate-001` ✅ 可用
+  - `gemini-3.1-flash-image-preview` ❌ 不支持
+
+## 配图库路径（2026-03-30 新增）
+
+**共享配图目录：** `~/.openclaw/workspace/images/`（主工作空间同步过来的）
+
+**本地配图路径（neirong工作空间）：**
+- `/Users/huanxi/.openclaw/workspace-shortvideo/images/healing_new_cover.jpg` — 封面图（迷宫女孩）
+- `/Users/huanxi/.openclaw/workspace-shortvideo/images/article_soul_maze.jpg` — 章节图1-内心迷宫
+- `/Users/huanxi/.openclaw/workspace-shortvideo/images/article_heart_tangle.jpg` — 章节图2-心结如线
+- `/Users/huanxi/.openclaw/workspace-shortvideo/images/article_tarot_stars.jpg` — 章节图3-星盘塔罗
+
+**图片使用规则：**
+- 写公众号文章时直接复用以上路径的图片，不重新生成
+- 如需上传微信素材，用 `/tmp/` 下的路径（微信上传需要先下载到/tmp）
+- 图片模型按次计费，不要重复生成
+
+
+## 重要：微信API返回内容的解码问题（2026-03-30修复）
+
+微信草稿箱API返回的内容中，中文是Unicode转义格式（如 `\u592a\u9633`），**必须先解码再发送给用户**，否则用户看到的是乱码。
+
+Python解码方法：
+```python
+import re
+def decode_unicode_escapes(s):
+    return re.sub(r'\\u([0-9a-fA-F]{4})', lambda m: chr(int(m.group(1), 16)), s)
+content = decode_unicode_escapes(raw_api_response)
+```
+
+**发送给用户之前，所有来自微信API的文本都必须解码。**
+
+## 公众号输出格式铁律（2026-03-30）
+
+- 所有公众号文章必须输出**完整HTML格式**
+- 禁止只给纯文字或"你去后台自己排版"
+- 必须同步推送到微信草稿箱 + 飞书文档
+- 配图用实际URL，不留占位符
+- 中文直出，不转义
+- 排版遵守 wechat_mp_html_spec.md 规范
+
+## 公众号/文章交付规则（2026-03-31 施欢明确要求）
+
+**触发场景**：施欢说"写公众号文章"、"写文章"、"发布"或类似创作指令时。
+
+**执行顺序**：
+1. 生成完整HTML文章
+2. 推送到微信公众号草稿箱（用 `wechat_mp_draft` 工具或 Python脚本）
+3. 创建飞书云文档，写入完整内容
+4. 对话只回复：飞书文档链接 + 一句话摘要
+
+**禁止行为**：
+- ❌ 在对话框里贴代码、贴HTML、贴大段原文
+- ❌ 给用户"你自己去后台排版"之类的提示
+- ✅ 直接给草稿箱结果和文档链接
+
+**草稿箱标题**：公众号标题有64字节限制，超长标题在推送时用缩短版，用户可在后台手动改回完整标题。
+
+**记忆口诀**：写文章 → 推草稿箱 + 建飞书文档 → 对话只回链接摘要
+
+## 微信草稿内容转义规则（2026-03-31）
+
+- HTML内容直接写正常字符串，Python `json=` 会自动处理JSON转义
+- 禁止把Unicode转义序列（如 `\u592a\u9633`）当正文发送
+- 中文直出，不做额外编码处理
+
+## 微信公众号推送乱码根因与修复（2026-03-31 实测）
+
+**症状**：草稿箱标题/摘要/内容出现 `U53CC`、`\u4e0a` 等Unicode转义序列
+
+**真正根因**：Python `requests.post(json=payload)` 内部用 `json.dumps(payload, ensure_ascii=True)`，把所有非ASCII字符转成 `\uXXXX`，WeChat直接存储转义序列。
+
+**两层清洗的区别**：
+- `sanitize_wechat_html.py`：清洗**模型输出**中的 U53CC / \uXXXX / U+XXXX 等码位字面量
+- `ensure_ascii=False`：防止**requests库**把UTF-8中文再次被转义
+
+**正确推送代码**（必须同时满足两条）：
+1. HTML文件、内容、标题、摘要先过 `sanitize_text()` 清洗模型输出
+2. 发送时用 `data=json.dumps(payload, ensure_ascii=False).encode("utf-8")` 防止requests二次转义
+
+**记忆口诀**：模型输出 → sanitize清洗 → ensure_ascii=False发送 → 草稿箱正常
+
+## Clawvard 考试成绩（2026-03-31）
+
+- **成绩**：A 级（超过 69% 的 AI Agent）
+- **考试 ID**：exam-002e5cdb
+- **token**：已保存到 `~/.openclaw/workspace-shortvideo/.clawvard_token`
+- **8个维度**：Reflection, Retrieval, Understanding, Reasoning, EQ, Execution, Memory, Tooling
+- **，施欢邮箱**：huanshi2301@gmail.com
+- **注册链接**：https://clawvard.school/verify?exam=exam-002e5cdb
+
+## 多Agent协作流程（2026-03-31 新增）
+
+- **liaoyuyewu（疗愈业务分身）**：负责写专业疗愈类内容（家族疗愈、代际创伤、海灵格家排等）
+- **neirong（内容创作分身）**：负责排版+推公众号草稿箱
+- **施欢**：负责审稿，觉得好就贴给neirong
+- **流程**：liaoyuyewu写 → 施欢审 → 施欢转发给neirong → neirong排版推草稿箱 → 施欢去草稿箱发布
+- **注意**：liaoyuyewu不需要有公众号推送能力，neirong统一负责发布链路
+
+## 已安装自我改进类 Skills（2026-04-01 新增）
+
+- **self-improving-with-reflection**（3.527分）— 自我反思+批评+学习+记忆组织，必须主动调用
+- **hamster-self-improving**（2.116分）— 自我反思+自我批评，必须主动调用
+
+**使用规则（施欢2026-04-01明确要求）：**
+1. 执行每个任务后，主动用 self-improving-with-reflection 做反思
+2. 遇到问题/卡点，主动用 hamster-self-improving 做自我批评和纠正
+3. 这两个 skill 是默认习惯，不是可选的
+
+## P0 改进任务（2026-04-01）
+
+- [ ] 写 `skill_index.md` 索引所有 skill 的名称/描述/位置
+- [ ] 扩大 MEMORY.md 搜索范围到 workspace 全部 .md + 飞书云盘
+- [ ] 建立「意图关键词 → SOP」的映射表

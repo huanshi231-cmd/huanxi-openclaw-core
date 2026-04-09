@@ -1,0 +1,135 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+微信公众号草稿箱推送脚本
+- 强制直连微信API，忽略系统代理
+- 自动处理封面图：优先使用传入的 media_id，无则上传默认封面
+- 用法: python3 push_draft.py "<title>" "<html_file>" "<digest>" [thumb_media_id]
+"""
+import os
+import re
+import sys
+from pathlib import Path
+
+import json
+import requests
+
+_scripts = Path(__file__).resolve().parent
+if str(_scripts) not in sys.path:
+    sys.path.insert(0, str(_scripts))
+from sanitize_wechat_html import sanitize_text
+
+DEFAULT_COVER = Path(__file__).resolve().parent.parent.parent.parent / "images" / "aquarius_cover.jpg"
+
+
+def ensure_utf8_content(text: str) -> str:
+    """确保内容是UTF-8编码的中文，而不是Unicode转义序列"""
+    if not text:
+        return text
+    # 如果内容中有 \\uXXXX 形式的转义序列，解码它
+    def decode_u4(m):
+        return chr(int(m.group(1), 16))
+    text = re.sub(r"\\u([0-9a-fA-F]{4})", decode_u4, text)
+    text = re.sub(r"\\U([0-9a-fA-F]{8})", decode_u4, text)
+    return text
+
+
+def upload_cover(s, token, cover_path=None):
+    """上传封面图，返回 media_id"""
+    path = Path(cover_path) if cover_path else DEFAULT_COVER
+    if not path.exists():
+        print(f"封面图不存在: {path}，跳过", file=sys.stderr)
+        return ""
+    with open(path, "rb") as f:
+        files = {"media": (path.name, f, "image/jpeg")}
+        r = s.post(
+            f"https://api.weixin.qq.com/cgi-bin/material/add_material?access_token={token}&type=image",
+            files=files,
+            timeout=60,
+        )
+    result = r.json()
+    if "media_id" in result:
+        print(f"封面上传成功: {result['media_id']}", file=sys.stderr)
+        return result["media_id"]
+    print(f"封面上传失败: {result}", file=sys.stderr)
+    return ""
+
+
+def main():
+    if len(sys.argv) < 4:
+        print("用法: python3 push_draft.py <title> <html_file> <digest> [thumb_media_id]")
+        sys.exit(1)
+
+    title = sanitize_text(sys.argv[1])
+    html_file = sys.argv[2]
+    digest = sanitize_text(sys.argv[3])
+    thumb_media_id = sys.argv[4].strip() if len(sys.argv) > 4 else ""
+
+    with open(html_file, "r", encoding="utf-8") as f:
+        content = sanitize_text(f.read())
+
+    s = requests.Session()
+    s.trust_env = False
+
+    appid = os.environ.get("WECHAT_APPID") or os.environ.get("WECHAT_APP_ID")
+    secret = os.environ.get("WECHAT_APPSECRET") or os.environ.get("WECHAT_APP_SECRET")
+
+    if not appid or not secret:
+        print("错误: 缺少微信公众号凭证")
+        sys.exit(1)
+
+    print("获取access_token...", file=sys.stderr)
+    r = s.get(
+        "https://api.weixin.qq.com/cgi-bin/token",
+        params={"grant_type": "client_credential", "appid": appid, "secret": secret},
+        timeout=60,
+    )
+    resp = r.json()
+    if "access_token" not in resp:
+        print(f"获取token失败: {resp}")
+        sys.exit(1)
+    token = resp["access_token"]
+
+    # 没有传入 media_id 则自动上传默认封面
+    if not thumb_media_id:
+        print("未指定封面，自动上传默认封面...", file=sys.stderr)
+        thumb_media_id = upload_cover(s, token)
+        if not thumb_media_id:
+            print("封面上传失败，尝试不带封面创建草稿", file=sys.stderr)
+
+    # 构建 payload
+    article = {
+        "title": title,
+        "author": "",
+        "digest": digest,
+        "content": content,
+        "content_source_url": "",
+        "need_open_comment": 1,
+        "only_fans_can_comment": 0,
+    }
+    if thumb_media_id:
+        article["thumb_media_id"] = thumb_media_id
+
+    # 确保内容是UTF-8编码（修复微信乱码问题）
+    article["content"] = ensure_utf8_content(article["content"])
+    article["title"] = ensure_utf8_content(article["title"])
+    article["digest"] = ensure_utf8_content(article["digest"])
+
+    payload = {"articles": [article]}
+    print(f"推送草稿: {title}", file=sys.stderr)
+    r = s.post(
+        f"https://api.weixin.qq.com/cgi-bin/draft/add?access_token={token}",
+        data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
+        headers={"Content-Type": "application/json; charset=utf-8"},
+        timeout=60,
+    )
+    result = r.json()
+    if "media_id" in result:
+        print(f"SUCCESS:{result['media_id']}")
+    else:
+        print(f"FAIL:{result}")
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()
