@@ -1,45 +1,38 @@
-# 欢喜 AI 团队总工作区（workspace-main）
+# huanxi-openclaw-core
 
-这是欢喜一人公司 AI 核心团队的总工作区，当前由 **太阳** 作为统一入口负责调度、规则维护、进度闭环与风险把关。
+欢喜 AI 团队核心工作配置仓库。
 
 ## 核心团队
 当前核心团队为 **7 个机器人**：太阳、蕊蕊、朵朵、灵夕、跳跳、光头强、梦梦。
 
-## 当前定位
-本仓库优先承担三类内容：
-1. **团队治理文件**：身份、职责、规则、记忆、心跳巡检
-2. **制度与协作文档**：团队框架、执行协议、项目原则
-3. **后续分批纳管的稳定资产**：经筛选后再逐步进入 Git
+## 收录范围
+- 七个核心机器人：太阳、蕊蕊、朵朵、灵夕、跳跳、光头强、梦梦
+- 每个机器人的七大核心文件精简版
+- 团队角色总表
+- 头像设计任务书
+- GitHub 仓库治理规则
 
-## 当前已纳管核心文件
-- `AGENTS.md`
-- `SOUL.md`
-- `IDENTITY.md`
-- `USER.md`
-- `TOOLS.md`
-- `MEMORY.md`
-- `HEARTBEAT.md`
-- `TEAM_ROLES.md`
+## 明确不收录
+- 私密对话、聊天记录、客户资料、KPI/业绩数据
+- `.env`、API Key、token、SSH 私钥等密钥
+- mempalace / sqlite / bin / cache / logs / daily_log 等运行数据
+- 未清洗的业务原始资料
 
-## 协作原则
-- 先结果，后解释
-- 敏感数据不进 Git
-- 删除、发布、权限、付费动作先确认
-- 可复用经验必须沉淀
-- 多文件杂项内容不一次性全量入库，按主题分批整理
-
-## Git 策略
-当前采用 **保守纳管策略**：
-- 先纳管核心治理文件与说明文档
-- 缓存、临时文件、运行状态、自动产物默认忽略
-- 图片、音视频、转录、压缩包、导出件是否入库，需按项目单独判断
-
-## 下一步建议
-1. 分出“治理层文件”与“业务资产文件”
-2. 建立 `docs/`、`assets/`、`archive/` 的明确入库标准
-3. 对历史文件做一次分层整理，再决定是否分批提交
-
-## 最近状态
-- 2026-04-27：已完成 Git 初始化
-- 2026-04-27：已完成核心团队文件首次备份提交
-- 2026-04-27：正在进行仓库长期维护化整理
+## 快捷链接
+- [团队角色总表](TEAM_ROLES.md)
+- [GitHub 仓库治理规则](GITHUB_GOVERNANCE.md)
+- [太阳岗位规范](AGENTS.md)
+- [太阳灵魂文件](SOUL.md)
+- [太阳身份配置](IDENTITY.md)
+- [用户与服务对象](USER.md)
+- [工具边界](TOOLS.md)
+- [长期记忆](MEMORY.md)
+- [心跳巡检](HEARTBEAT.md)
+- [备份说明总览](docs/BACKUP_MANUAL.md)
+- [恢复指南](docs/RESTORE_GUIDE.md)
+- [同步流程](runbooks/SYNC_WORKFLOW.md)
+- [上传边界](docs/UPLOAD_BOUNDARY.md)
+- [新模型/新机器人接手指南](docs/HANDOVER_GUIDE_FOR_NEW_MODEL.md)
+- [Prompt 翻译协议](docs/PROMPT_TRANSLATION_PROTOCOL.md)
+- [Prompt 协议强制落地清单](runbooks/PROMPT_PROTOCOL_ENFORCEMENT.md)
+- [图片可见交付规则](runbooks/IMAGE_DELIVERY_RUNBOOK.md)
