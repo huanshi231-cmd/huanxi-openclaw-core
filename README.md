@@ -13,3 +13,12 @@
 - `.env`、API Key、token、SSH 私钥等密钥
 - mempalace / sqlite / bin / cache / logs / daily_log 等运行数据
 - 未清洗的业务原始资料
+
+## 核心文档
+
+- [备份说明总览](docs/BACKUP_MANUAL.md)
+- [恢复指南](docs/RESTORE_GUIDE.md)
+- [同步流程](runbooks/SYNC_WORKFLOW.md)
+- [上传边界](docs/UPLOAD_BOUNDARY.md)
+- [团队角色总表](docs/TEAM_ROLES.md)
+
