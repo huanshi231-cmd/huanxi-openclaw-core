@@ -28,3 +28,38 @@ cp <图片路径> ~/Desktop/<清晰文件名>.jpg
 ```
 
 然后重新用原生图片方式发送。
+
+## 已验证成功方案（2026-04-27）
+
+飞书聊天内可见图片的可靠方案：
+
+1. 先保存 JPG 到桌面。
+2. 用 Finder 选中图片文件。
+3. `Cmd+C` 复制。
+4. 切换到 Feishu 当前对话。
+5. `Cmd+V` 粘贴。
+6. `Enter` 发送。
+
+验证结果：用户侧收到 `image_key`，说明图片已作为飞书图片进入聊天记录。
+
+## 自动化命令参考
+
+```applescript
+set imgPath to POSIX file "/Users/huanxi/Desktop/图片名.jpg"
+tell application "Finder"
+    activate
+    reveal imgPath
+end tell
+delay 0.8
+tell application "System Events"
+    keystroke "c" using command down
+end tell
+delay 0.5
+tell application "Feishu" to activate
+delay 1.0
+tell application "System Events"
+    keystroke "v" using command down
+    delay 1.5
+    key code 36
+end tell
+```
