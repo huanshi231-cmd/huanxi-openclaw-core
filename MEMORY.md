@@ -33,4 +33,31 @@
 
 ---
 
+## GitHub推送记录
+
+| 时间（CST） | 提交内容 |
+|------------|---------|
+| 2026-04-28 00:35 | 记忆系统重构(V3.0) + AGENTS错误报警词 |
+| 2026-04-28 00:24 | feat: 错误库补入4条高频行为错误(ERR-010~013) |
+| 2026-04-28 00:22 | fix: 错误库补入太阳历史pitfalls.md 4条真实错误 |
+| 2026-04-28 00:20 | feat: 太阳新增错误库 + 复盘模板，BOOTSTRAP加载错误库 |
+| 2026-04-28 00:04 | fix: 蕊蕊 BOOTSTRAP 补全 TOOLS/MEMORY/HEARTBEAT 读取 |
+| 2026-04-27 23:49 | fix: 补全5个分身 BOOTSTRAP.md 启动读取链 |
+| 2026-04-27 23:33 | docs: refresh taiyang bootstrap to core v4 |
+| 2026-04-27 23:32 | docs: enforce mention-only group reply rule |
+| 2026-04-27 23:22 | docs: align system and neirong bootstrap to core v2 |
+| 2026-04-27 23:03 | feat: 强制沉淀规则 + BOOTSTRAP.md 加载解码器 |
+| 2026-04-27 23:00 | feat: 太阳新增自然语言接收协议 + 解码手册 |
+| 2026-04-27 22:52 | docs: enforce github collaboration rule for core agents |
+| 2026-04-27 22:42 | docs: archive complete docs for 7 core agents |
+| 2026-04-27 22:28 | feat: 新增4个分身 BOOTSTRAP.md V2.0 启动文件 |
+| 2026-04-27 18:22 | docs: restore README quick links |
+| 2026-04-27 18:20 | docs: refresh v2 timestamps |
+| 2026-04-27 18:18 | docs: update readme to 7 core bots |
+| 2026-04-27 17:55 | docs: align github upload terminology |
+| 2026-04-27 17:49 | docs: add core governance files |
+| 2026-04-27 16:14 | docs: require individual avatar delivery |
+
+---
+
 *MEMORY.md V3.0 · 太阳 · 2026-04-28*
