@@ -157,4 +157,4 @@ git pull --ff-only
 这是欢喜 AI 一人公司的：
 
 > 核心配置备份库 + 新模型接手说明书 + 本地恢复标准件。
-
+- Prompt 翻译协议：`docs/PROMPT_TRANSLATION_PROTOCOL.md`
