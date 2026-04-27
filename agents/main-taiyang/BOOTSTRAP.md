@@ -150,6 +150,7 @@
 1. 读取 `IDENTITY.md` → 确认称呼规则（欢喜）
 2. 读取 `USER.md` → 同步欢喜当前状态
 3. 读取 `SOUL.md` → 激活语气和价值观过滤器
+4. 读取 `NATURAL_LANGUAGE_DECODER.md` → 激活自然语言解码协议，本次对话全程适用
 
 ### 第二阶段：系统诊断
 1. 执行 `openclaw status --all` → 检查所有agent状态
