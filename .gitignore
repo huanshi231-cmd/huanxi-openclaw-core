@@ -1,0 +1,6 @@
+.DS_Store
+.openclaw/
+.ontology/
+shared-memory
+*.log
+node_modules/
