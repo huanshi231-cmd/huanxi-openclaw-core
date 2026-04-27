@@ -24,3 +24,4 @@
 - [新模型/新机器人接手指南](docs/HANDOVER_GUIDE_FOR_NEW_MODEL.md)
 - [Prompt 翻译协议](docs/PROMPT_TRANSLATION_PROTOCOL.md)
 - [Prompt 协议强制落地清单](runbooks/PROMPT_PROTOCOL_ENFORCEMENT.md)
+- [图片可见交付规则](runbooks/IMAGE_DELIVERY_RUNBOOK.md)
