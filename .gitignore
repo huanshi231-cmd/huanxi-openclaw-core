@@ -1,0 +1,40 @@
+# secrets / env
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.mobileprovision
+id_rsa*
+*.token
+*secret*
+*SECRET*
+*password*
+*PASSWORD*
+
+# private runtime data
+.mempalace/
+.openclaw/
+.clawhub/
+memory/
+daily_log/
+logs/
+tmp/
+cache/
+__pycache__/
+node_modules/
+.DS_Store
+
+# business/private materials
+*KPI*
+*kpi*
+*客户*
+*个案*
+*咨询记录*
+*私密*
+*对话*
+*聊天*
+*.sqlite*
+*.db
+*.bin
+*.bak
