@@ -1,17 +1,63 @@
-# MEMORY.md · 太阳长期记忆
+# MEMORY.md · 太阳长期记忆索引
 
-> 版本：Core V2.0 | 更新时间：2026-04-27 | 维护：太阳
+> 版本：Core V3.0 | 更新：2026-04-28 | 维护：太阳
+> 规则：本文件只作索引，详细内容在4个子文件里
 
-## 当前角色 2.0
-- 名称：太阳
-- 花名：太阳
-- 岗位：运营总管 / COO / 首席调度官
-- 使命：建立公司制度，统一任务调度，追踪进度闭环，并作为唯一入口对接 CEO 欢喜。
-- 风格：温暖坚定、判断清楚、推进感强；少废话，先结果后解释。
+---
 
-## 必须记住
-1. 欢喜喜欢：短、准、直接落地。
-2. 团队核心是 7 个机器人，不是 6 个。
-3. 太阳的职责重点：公司制度：维护团队规则、协作链路、交付标准。
-4. 敏感数据不进 Git；详细边界以 UPLOAD_BOUNDARY.md 为准。
-5. 所有可复用经验要沉淀，所有任务要闭环。
+## 记忆文件索引
+
+| 文件 | 类型 | 内容 |
+|------|------|------|
+| [memory_user.md](./memory_user.md) | user | 欢喜基本信息/沟通偏好/工作习惯 |
+| [memory_feedback.md](./memory_feedback.md) | feedback | 执行规则/纠正记录/错误报警词 |
+| [memory_project.md](./memory_project.md) | project | 公司架构/7分身/当前项目状态/重要决策 |
+| [memory_reference.md](./memory_reference.md) | reference | 路径/GitHub/外部系统/命令速查 |
+
+---
+
+## 快速提取（高频查询）
+
+- **欢喜偏好**：→ memory_user.md
+- **被欢喜纠正过的规则**：→ memory_feedback.md
+- **分身架构/模型配置**：→ memory_project.md
+- **路径/命令**：→ memory_reference.md
+- **历史错误**：→ 错误库.md
+
+---
+
+## 日常记录入口
+
+- 每日工作记录：`daily_log/YYYY-MM-DD.md`
+- 任务复盘：`daily_log/YYYY-MM-DD-复盘.md`
+
+---
+
+## GitHub推送记录
+
+| 时间（CST） | 提交内容 |
+|------------|---------|
+| 2026-04-28 00:35 | 记忆系统重构(V3.0) + AGENTS错误报警词 |
+| 2026-04-28 00:24 | feat: 错误库补入4条高频行为错误(ERR-010~013) |
+| 2026-04-28 00:22 | fix: 错误库补入太阳历史pitfalls.md 4条真实错误 |
+| 2026-04-28 00:20 | feat: 太阳新增错误库 + 复盘模板，BOOTSTRAP加载错误库 |
+| 2026-04-28 00:04 | fix: 蕊蕊 BOOTSTRAP 补全 TOOLS/MEMORY/HEARTBEAT 读取 |
+| 2026-04-27 23:49 | fix: 补全5个分身 BOOTSTRAP.md 启动读取链 |
+| 2026-04-27 23:33 | docs: refresh taiyang bootstrap to core v4 |
+| 2026-04-27 23:32 | docs: enforce mention-only group reply rule |
+| 2026-04-27 23:22 | docs: align system and neirong bootstrap to core v2 |
+| 2026-04-27 23:03 | feat: 强制沉淀规则 + BOOTSTRAP.md 加载解码器 |
+| 2026-04-27 23:00 | feat: 太阳新增自然语言接收协议 + 解码手册 |
+| 2026-04-27 22:52 | docs: enforce github collaboration rule for core agents |
+| 2026-04-27 22:42 | docs: archive complete docs for 7 core agents |
+| 2026-04-27 22:28 | feat: 新增4个分身 BOOTSTRAP.md V2.0 启动文件 |
+| 2026-04-27 18:22 | docs: restore README quick links |
+| 2026-04-27 18:20 | docs: refresh v2 timestamps |
+| 2026-04-27 18:18 | docs: update readme to 7 core bots |
+| 2026-04-27 17:55 | docs: align github upload terminology |
+| 2026-04-27 17:49 | docs: add core governance files |
+| 2026-04-27 16:14 | docs: require individual avatar delivery |
+
+---
+
+*MEMORY.md V3.0 · 太阳 · 2026-04-28*
