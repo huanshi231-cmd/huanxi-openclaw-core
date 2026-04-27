@@ -21,4 +21,4 @@
 - [同步流程](runbooks/SYNC_WORKFLOW.md)
 - [上传边界](docs/UPLOAD_BOUNDARY.md)
 - [团队角色总表](docs/TEAM_ROLES.md)
-
+- [新模型/新机器人接手指南](docs/HANDOVER_GUIDE_FOR_NEW_MODEL.md)

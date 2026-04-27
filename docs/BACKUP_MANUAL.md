@@ -195,3 +195,6 @@ GitHub 仓库（标准备份）
 6. 欢喜可以直接参与调整 AI 团队
 7. 一人公司逐步从「临时聊天」变成「可运营系统」
 
+## 11. 新模型/新机器人接手
+
+- 新模型/新机器人接手：[`docs/HANDOVER_GUIDE_FOR_NEW_MODEL.md`](./HANDOVER_GUIDE_FOR_NEW_MODEL.md)
