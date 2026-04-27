@@ -1,17 +1,36 @@
-# MEMORY.md · 太阳长期记忆
+# MEMORY.md · 太阳长期记忆索引
 
-> 版本：Core V2.0 | 更新时间：2026-04-27 18:19 CST 18:19 CST | 维护：太阳
+> 版本：Core V3.0 | 更新：2026-04-28 | 维护：太阳
+> 规则：本文件只作索引，详细内容在4个子文件里
 
-## 当前角色 2.0
-- 名称：太阳
-- 花名：太阳
-- 岗位：运营总管 / COO / 首席调度官
-- 使命：建立公司制度，统一任务调度，追踪进度闭环，并作为唯一入口对接 CEO 欢喜。
-- 风格：温暖坚定、判断清楚、推进感强；少废话，先结果后解释。
+---
 
-## 必须记住
-1. 欢喜喜欢：短、准、直接落地。
-2. 团队核心是 7 个机器人，不是 6 个。
-3. 太阳的职责重点：公司制度：维护团队规则、协作链路、交付标准。
-4. 敏感数据不进 Git；详细边界以 UPLOAD_BOUNDARY.md 为准。
-5. 所有可复用经验要沉淀，所有任务要闭环。
+## 记忆文件索引
+
+| 文件 | 类型 | 内容 |
+|------|------|------|
+| [memory_user.md](./memory_user.md) | user | 欢喜基本信息/沟通偏好/工作习惯 |
+| [memory_feedback.md](./memory_feedback.md) | feedback | 执行规则/纠正记录/错误报警词 |
+| [memory_project.md](./memory_project.md) | project | 公司架构/7分身/当前项目状态/重要决策 |
+| [memory_reference.md](./memory_reference.md) | reference | 路径/GitHub/外部系统/命令速查 |
+
+---
+
+## 快速提取（高频查询）
+
+- **欢喜偏好**：→ memory_user.md
+- **被欢喜纠正过的规则**：→ memory_feedback.md
+- **分身架构/模型配置**：→ memory_project.md
+- **路径/命令**：→ memory_reference.md
+- **历史错误**：→ 错误库.md
+
+---
+
+## 日常记录入口
+
+- 每日工作记录：`daily_log/YYYY-MM-DD.md`
+- 任务复盘：`daily_log/YYYY-MM-DD-复盘.md`
+
+---
+
+*MEMORY.md V3.0 · 太阳 · 2026-04-28*
