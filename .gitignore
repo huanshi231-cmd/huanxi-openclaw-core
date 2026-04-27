@@ -1,6 +1,34 @@
+# macOS
 .DS_Store
+
+# runtime / local state
 .openclaw/
 .ontology/
-shared-memory
-*.log
+.clawhub/
+.code_reading/
+.learnings/
+shared-memory/
+state/
+
+# dependencies / logs
 node_modules/
+*.log
+
+# temp / preview
+tmp_*
+*.tmp
+
+# generated transcripts / exports
+file_*---*.json
+file_*---*.srt
+file_*---*.tsv
+file_*---*.txt
+file_*---*.vtt
+
+# backup files
+*.bak
+*.backup
+*.clobbered.*
+
+# archives
+*.zip
