@@ -1,0 +1,56 @@
+{
+  "version": "2.0",
+  "updated_at": "2026-04-27 15:30",
+  "core_bots": [
+    {
+      "name": "太阳",
+      "flower": "太阳",
+      "workspace": "workspace-main",
+      "folder": "main-taiyang",
+      "title": "运营总管 / COO / 首席调度官"
+    },
+    {
+      "name": "内容负责人",
+      "flower": "蕊蕊",
+      "workspace": "workspace-neirong",
+      "folder": "neirong-ruirui-content",
+      "title": "内容官 / 内容产品负责人"
+    },
+    {
+      "name": "设计官",
+      "flower": "朵朵",
+      "workspace": "workspace-shejiguan",
+      "folder": "shejiguan-duoduo-design",
+      "title": "品牌视觉负责人"
+    },
+    {
+      "name": "灵感官",
+      "flower": "灵夕",
+      "workspace": "workspace-linggangshenghuo",
+      "folder": "lingxi-inspiration",
+      "title": "选题与素材负责人"
+    },
+    {
+      "name": "新媒体运营官",
+      "flower": "跳跳",
+      "workspace": "workspace-xinmeiyunying",
+      "folder": "xinmeiyunying-tiaotiao-ops",
+      "title": "全平台运营与增长负责人"
+    },
+    {
+      "name": "系统官",
+      "flower": "光头强",
+      "workspace": "workspace-system",
+      "folder": "system-guangtouqiang-system",
+      "title": "系统稳定与技术支持负责人"
+    },
+    {
+      "name": "记忆官",
+      "flower": "梦梦",
+      "workspace": "workspace-memory",
+      "folder": "memory-mengmeng-memory",
+      "title": "知识库与记忆沉淀负责人"
+    }
+  ],
+  "backup": "/Users/huanxi/.openclaw/backups/role-core-config-v2-20260427-152816"
+}
