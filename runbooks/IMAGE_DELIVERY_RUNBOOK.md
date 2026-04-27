@@ -63,3 +63,12 @@ tell application "System Events"
     key code 36
 end tell
 ```
+
+## 二次验证记录
+
+2026-04-27 15:41，连续发送两张桌面 JPG：
+
+1. `cover_v1_暖紫色治愈风.jpg`
+2. `cover_v2_极简莫兰迪风.jpg`
+
+用户侧均返回 `image_key`，确认飞书聊天记录可见。
