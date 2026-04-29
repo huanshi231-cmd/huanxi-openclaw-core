@@ -1,0 +1,12 @@
+wing: workspace_linggangshenghuo
+rooms:
+- name: memory
+  description: Files from memory/
+- name: knowledge
+  description: Files from knowledge/
+- name: skills
+  description: Files from skills/
+- name: documentation
+  description: Files from wiki/
+- name: general
+  description: Files that don't fit other rooms
