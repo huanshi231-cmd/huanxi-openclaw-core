@@ -1,0 +1,5 @@
+{
+  "model_used": "gemini-3.1-flash-image-preview",
+  "local_path": "generated_images/cover_gemini_final.png",
+  "prompt": "\nGenerate a WeChat official account cover image:\n1. Content: realistic cinematic photography, back view of a modern Asian woman sitting alone by floor-to-ceiling window, outside is purple-toned city dusk, soft purple halo envelops the whole scene, warm yellow indoor light illuminates character's outline from the side, character's posture is quiet and peaceful, healing and melancholic atmosphere\n2. Composition: simple, plenty of blank space at the top and bottom of the image for adding text later\n3. Color tone: healing purple #9370DB as main color\n4. Style: 4K HD, cinematic texture, emotional healing style\n5. Important: no text, no subtitles, pure image\n6. Size: 1280x720 pixels, 16:9 aspect ratio\n"
+}

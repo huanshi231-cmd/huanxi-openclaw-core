@@ -1,0 +1,18 @@
+[
+  {
+    "name": "cover",
+    "url": "https://ark-content-generation-v2-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-4-0/021777186962512894597f0108ca2055e7feedd25909c956da11c_0.jpeg?X-Tos-Algorithm=TOS4-HMAC-SHA256&X-Tos-Credential=AKLTYWJkZTExNjA1ZDUyNDc3YzhjNTM5OGIyNjBhNDcyOTQ%2F20260426%2Fcn-beijing%2Ftos%2Frequest&X-Tos-Date=20260426T070249Z&X-Tos-Expires=86400&X-Tos-Signature=35c17e83417193d7200531fd1c06585669554c1b7aee64a14d0d8719b80ee1e7&X-Tos-SignedHeaders=host",
+    "local_path": "generated_images/cover.png"
+  }
+][
+  {
+    "name": "image1",
+    "url": "https://ark-content-generation-v2-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-4-0/021777186983780f3d1fdaa5e961ea5a6156e3d27d6a985b98b07_0.jpeg?X-Tos-Algorithm=TOS4-HMAC-SHA256&X-Tos-Credential=AKLTYWJkZTExNjA1ZDUyNDc3YzhjNTM5OGIyNjBhNDcyOTQ%2F20260426%2Fcn-beijing%2Ftos%2Frequest&X-Tos-Date=20260426T070310Z&X-Tos-Expires=86400&X-Tos-Signature=e7ee85d8abf84017f99a68882e74537f34976b31f8e965a1512ed47dfb4ea564&X-Tos-SignedHeaders=host",
+    "local_path": "generated_images/image1.png"
+  },
+  {
+    "name": "image2",
+    "url": "https://ark-content-generation-v2-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-4-0/02177718699086672955853283a14d90985fd352360c0a62c1318_0.jpeg?X-Tos-Algorithm=TOS4-HMAC-SHA256&X-Tos-Credential=AKLTYWJkZTExNjA1ZDUyNDc3YzhjNTM5OGIyNjBhNDcyOTQ%2F20260426%2Fcn-beijing%2Ftos%2Frequest&X-Tos-Date=20260426T070317Z&X-Tos-Expires=86400&X-Tos-Signature=1bc610636f938e63e9843b4af82b1d89566e0a51f7c8d1a7278e8eea9d8d8615&X-Tos-SignedHeaders=host",
+    "local_path": "generated_images/image2.png"
+  }
+]
