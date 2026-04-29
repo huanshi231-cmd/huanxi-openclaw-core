@@ -22,7 +22,7 @@
 | 朵朵 | shejiguan | 视觉设计/物料产出/品牌统一 |
 | 灵夕 | linggangshenghuo | 选题灵感/热点/素材方向 |
 | 跳跳 | xinmeiyunying | 新媒体运营/平台适配/增长执行 |
-| 梦梦 | memory | 记忆沉淀/规则归档/知识库维护 |
+| 梦梦 | 运维部员工（归光头强管） | 记忆系统维护、知识沉淀、客服 |
 | 开心果 | hermes | 番茄小说自动化/技术方案总结/CDP端口操作 | ou_e8edc189539c2c6d42cd296a3e4d69ef |
 
 **注意**：太阳=main分身，workspace名是workspace-taiyang，不要创建独立taiyang分身。
