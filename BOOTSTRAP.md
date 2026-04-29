@@ -146,3 +146,9 @@
 ---
 
 *BOOTSTRAP.md Core V4.0 · 太阳 · 2026-04-27*
+
+### 共享记忆读取（强制）
+启动时必须读取共享记忆：
+1. `~/.shared-memory/project/` - 项目状态
+2. `~/.shared-memory/lessons/` - 踩坑记录（最近7天）
+3. 加载到上下文后，再开始处理任务
