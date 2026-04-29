@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "created": "2026-04-16",
+  "maintained_by": "太阳（COO）",
+  "description": "任务注册表 - 唯一真相源",
+  "tasks": [],
+  "stats": {
+    "total": 0,
+    "pending": 0,
+    "in_progress": 0,
+    "pending_confirm": 0,
+    "completed": 0,
+    "cancelled": 0
+  },
+  "last_sync": null
+}

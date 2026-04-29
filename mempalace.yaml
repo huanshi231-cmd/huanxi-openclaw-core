@@ -1,0 +1,34 @@
+wing: workspace_main
+rooms:
+- name: scripts_lib
+  description: Files from scripts_lib/
+- name: "\u7075\u611F\u7D20\u6750"
+  description: "Files from \u7075\u611F\u7D20\u6750/"
+- name: khazix_writer
+  description: Files from khazix-writer/
+- name: memory
+  description: Files from memory/
+- name: daily_log
+  description: Files from daily_log/
+- name: documentation
+  description: Files from docs/
+- name: state
+  description: Files from state/
+- name: khazix_skills
+  description: Files from khazix-skills/
+- name: knowledge
+  description: Files from knowledge/
+- name: scripts
+  description: Files from scripts/
+- name: skills
+  description: Files from skills/
+- name: daily_summary
+  description: Files from daily_summary/
+- name: "\u5185\u5BB9\u7B56\u5212"
+  description: "Files from \u5185\u5BB9\u7B56\u5212/"
+- name: reports
+  description: Files from reports/
+- name: research
+  description: Files from references/
+- name: general
+  description: Files that don't fit other rooms

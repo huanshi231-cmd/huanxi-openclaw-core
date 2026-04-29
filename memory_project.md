@@ -1,0 +1,74 @@
+# memory_project.md · 项目背景与架构
+
+> 类型：project | 更新：2026-04-28 | 维护：太阳
+> 存放：公司结构、分身架构、当前项目状态、重要决策
+
+---
+
+## 公司与业务
+
+- **公司**：欢喜一人公司
+- **业务**：心理疗愈 / 占星塔罗 / SRT疗愈师
+- **目标用户**：情感内耗、分手复合、人生迷茫的女性
+- **平台**：主要在飞书协作，内容分发到小红书/抖音等
+
+## 7个核心分身
+
+| 分身名 | 英文ID | 职责 |
+|-------|--------|------|
+| 太阳 | main（workspace-taiyang） | COO/调度总管，欢喜唯一对接入口 |
+| 光头强 | system | 系统/配置/排障/路由/GitHub技术支持 |
+| 蕊蕊 | neirong | 内容创作/表达优化/文案结构 |
+| 朵朵 | shejiguan | 视觉设计/物料产出/品牌统一 |
+| 灵夕 | linggangshenghuo | 选题灵感/热点/素材方向 |
+| 跳跳 | xinmeiyunying | 新媒体运营/平台适配/增长执行 |
+| 梦梦 | memory | 记忆沉淀/规则归档/知识库维护 |
+| 开心果 | hermes | 番茄小说自动化/技术方案总结/CDP端口操作 | ou_e8edc189539c2c6d42cd296a3e4d69ef |
+
+**注意**：太阳=main分身，workspace名是workspace-taiyang，不要创建独立taiyang分身。
+
+## 架构规则
+
+- 欢喜→太阳→其他分身（太阳是唯一入口，其他分身归太阳管）
+- 太阳、光头强可操作GitHub；其他分身有更新先交太阳验收
+- 群里欢喜@谁，谁自己说话；太阳不代替分身发言
+
+## 记忆系统架构
+
+- **层1 日常记录**：`daily_log/` 存每日工作记录（YYYY-MM-DD.md）
+- **层2 长期记忆**：`memory_user/feedback/project/reference.md` 四类固化记忆
+- **层3 检索入口**：`MEMORY.md` 作为索引
+
+## 当前模型配置（2026-04-27）
+
+- 太阳(main)：aicodewith/claude-sonnet-4-6（或腾讯云方案）
+- 光头强(system)：aicodewith/claude-sonnet-4-6（2026-04-27改）
+- 蕊蕊/朵朵/灵夕/跳跳：腾讯云套餐模型（方案一）
+- 梦梦(memory)：记忆专用模型
+
+
+## 重要决策记录
+
+- **2026-04-27**：7分身补全BOOTSTRAP启动链，全部加载AGENTS/TOOLS/MEMORY/HEARTBEAT
+- **2026-04-27**：错误库.md建立，13条历史错误录入，太阳启动必读
+- **2026-04-27**：NATURAL_LANGUAGE_DECODER.md建立，自然语言解码协议激活
+- **2026-04-27**：光头强模型改为aicodewith/claude-sonnet-4-6
+- **2026-04-27**：记忆文件拆分为4类结构（user/feedback/project/reference）
+
+## 7分身 open_id 对照表（2026-04-28 实测）
+
+| 分身名 | Agent ID | 飞书应用名 | open_id |
+|--------|----------|-----------|---------|
+| 太阳 | main | 太阳COO | ou_26ef2adfee37cf61503ee6b6cdc2b581 |
+| 光头强 | system | 光头强 | ou_1724f0025d51c97fb7fde880ebbb6ae5 |
+| 蕊蕊 | neirong | 蕊蕊 | ou_13de9a82ab69491c4de1a3db0cd1c7d5 |
+| 灵夕 | linggangshenghuo | 灵夕 | ou_fbed00a36686879ac6f83cb5622cf7e0 |
+| 梦梦 | memory | 梦梦 | ou_44b845b99943a85b7ee327597b397ce4 |
+| 跳跳 | xinmeiyunying | 跳跳 | ou_1c9b3d78a919c2d8e6248aed8483c5ae |
+| 朵朵 | shejiguan | 朵朵 | ou_72c126be119e94177c40730ef4316278 |
+
+协作群 chat_id: oc_6c409c73f6d1bc540d0e54d472ea6bf2
+- **2026-04-29**：团队升级到8人，组织架构优化为2部门制（内容生态部+运营部）
+- **2026-04-29**：开心果升任运营部主管，管理跳跳、光头强、朵朵
+- **2026-04-29**：蕊蕊任内容生态部主管，管理梦梦、灵夕
+- **2026-04-29**：T+1制度确立，欢喜只需对接太阳/蕊蕊/开心果
