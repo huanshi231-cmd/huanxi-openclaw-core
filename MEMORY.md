@@ -9,10 +9,10 @@
 
 | 文件 | 类型 | 内容 |
 |------|------|------|
-| [memory_user.md](./memory_user.md) | user | 欢喜基本信息/沟通偏好/工作习惯 |
-| [memory_feedback.md](./memory_feedback.md) | feedback | 执行规则/纠正记录/错误报警词 |
-| [memory_project.md](./memory_project.md) | project | 公司架构/7分身/当前项目状态/重要决策 |
-| [memory_reference.md](./memory_reference.md) | reference | 路径/GitHub/外部系统/命令速查 |
+| [memory_user.md](./memory/memory_user.md) | user | 欢喜基本信息/沟通偏好/工作习惯 |
+| [memory_feedback.md](./memory/memory_feedback.md) | feedback | 执行规则/纠正记录/错误报警词 |
+| [memory_project.md](./memory/memory_project.md) | project | 公司架构/7分身/当前项目状态/重要决策 |
+| [memory_reference.md](./memory/memory_reference.md) | reference | 路径/GitHub/外部系统/命令速查 |
 
 ---
 
