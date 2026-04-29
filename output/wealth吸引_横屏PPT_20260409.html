@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>财富吸引 · 欢喜</title>
+  <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/tailwindcss/3.0.23/tailwind.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans SC', sans-serif; background: #050508; color: #fff; overflow: hidden; }
+    .slides-container { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background: #050508; }
+    .slide {
+      width: 100%; height: 100%;
+      aspect-ratio: 16/9;
+      position: absolute;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 4rem 10rem;
+      opacity: 0; transform: translateX(80px);
+      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    .slide.active { opacity: 1; transform: translateX(0); }
+    .slide.prev { opacity: 0; transform: translateX(-80px); }
+    /* 能量光斑 */
+    .orb { position: absolute; border-radius: 50%; pointer-events: none; }
+    .orb-1 { width: 600px; height: 600px; background: radial-gradient(circle, rgba(139,92,246,0.4) 0%, transparent 70%); top: -200px; right: -200px; animation: orb1 15s ease-in-out infinite; }
+    .orb-2 { width: 500px; height: 500px; background: radial-gradient(circle, rgba(236,72,153,0.35) 0%, transparent 70%); bottom: -150px; left: -150px; animation: orb2 20s ease-in-out infinite; }
+    .orb-3 { width: 400px; height: 400px; background: radial-gradient(circle, rgba(34,211,238,0.3) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%,-50%); animation: orb3 12s ease-in-out infinite; }
+    @keyframes orb1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-80px,60px) scale(1.15)} }
+    @keyframes orb2 { 0%,100%{transform:translate(0,0)} 40%{transform:translate(60px,-60px)} }
+    @keyframes orb3 { 0%,100%{transform:translate(-50%,-50%) scale(1);opacity:0.3} 50%{transform:translate(-50%,-50%) scale(1.5);opacity:0.5} }
+    .slide-content { position: relative; z-index: 10; text-align: center; width: 100%; max-width: 1100px; }
+    /* 能量线 */
+    .energy-line { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, #8b5cf6, transparent); margin: 0 auto 2rem; }
+    /* 进度条 */
+    .progress-bar { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 100; }
+    .progress-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s; }
+    .progress-dot.active { background: #8b5cf6; transform: scale(1.5); box-shadow: 0 0 10px rgba(139,92,246,0.6); }
+    .page-number { position: fixed; bottom: 20px; right: 30px; font-size: 0.75rem; color: rgba(255,255,255,0.25); z-index: 100; letter-spacing: 0.1em; }
+    /* 符号 */
+    .symbol { font-size: 4rem; margin-bottom: 1.5rem; filter: drop-shadow(0 0 20px rgba(139,92,246,0.5)); }
+    .big-quote { font-size: 5rem; color: rgba(139,92,246,0.2); line-height: 1; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+<div class="slides-container">
+
+<!-- S1: 封面 -->
+<div class="slide active">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="slide-content">
+    <div class="symbol">💎</div>
+    <h1 class="text-7xl font-black mb-6 tracking-tight">财富吸引</h1>
+    <div class="energy-line"></div>
+    <p class="text-xl text-gray-400 tracking-widest">从恐惧频率 → 爱的频率</p>
+    <p class="mt-12 text-gray-600 text-sm">欢喜 · 18年疗愈经验</p>
+  </div>
+</div>
+
+<!-- S2: 你不是缺钱，你是缺频率 -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="slide-content">
+    <div class="symbol">⚡</div>
+    <h1 class="text-6xl font-black mb-8">你不是缺钱<br><span class="text-purple-400">你是缺频率</span></h1>
+    <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+      钱不是追来的，是调频调出来的。<br>
+      当你的频率对了，钱自己会来。
+    </p>
+  </div>
+</div>
+
+<!-- S3: 两种频率 -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="slide-content">
+    <h1 class="text-5xl font-bold mb-12">两种频率，两种结局</h1>
+    <div class="grid grid-cols-2 gap-12 max-w-4xl mx-auto text-left">
+      <div class="p-8 border border-rose-900/50 rounded-2xl bg-rose-950/20">
+        <p class="text-rose-400 text-sm tracking-widest mb-4">恐惧频率 · 100</p>
+        <p class="text-xl font-bold mb-3">盯着余额</p>
+        <p class="text-gray-500 text-base leading-relaxed">
+          焦虑、不安、紧缩<br>
+          能量向内收缩<br>
+          财富管道关闭
+        </p>
+        <p class="mt-4 text-rose-400 text-sm">= 绝缘</p>
+      </div>
+      <div class="p-8 border border-purple-900/50 rounded-2xl bg-purple-950/20">
+        <p class="text-purple-400 text-sm tracking-widest mb-4">爱的频率 · 500</p>
+        <p class="text-xl font-bold mb-3">盯着价值</p>
+        <p class="text-gray-500 text-base leading-relaxed">
+          扩张、喜悦、本自具足<br>
+          能量向外流动<br>
+          财富主动靠近
+        </p>
+        <p class="mt-4 text-purple-400 text-sm">= 磁铁</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S4: 金句 -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="slide-content">
+    <div class="big-quote">"</div>
+    <p class="text-4xl font-bold leading-relaxed mb-6">你盯着什么<br>你就成为什么</p>
+    <p class="text-gray-500 text-lg">盯着余额 → 匮乏<br>盯着价值 → 丰盛</p>
+  </div>
+</div>
+
+<!-- S5: 身体知道答案 -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="slide-content">
+    <div class="symbol">🔬</div>
+    <h1 class="text-5xl font-bold mb-8">身体知道答案</h1>
+    <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed mb-8">
+      想象银行卡只剩100块，明天要交房租——<br>
+      <strong class="text-white">身体哪个部位最先紧缩？</strong>
+    </p>
+    <p class="text-gray-600 text-base">那里，就是你财富卡点的GPS坐标</p>
+  </div>
+</div>
+
+<!-- S6: 50万测试 -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="slide-content">
+    <div class="symbol">💰</div>
+    <h1 class="text-5xl font-bold mb-8">给你50万<br><span class="text-purple-400">你的第一反应是？</span></h1>
+    <div class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed mb-8">
+      <p>松一口气？</p>
+      <p class="mt-2">还是——怎么存、怎么藏、万一丢了怎么办？</p>
+    </div>
+    <div class="p-5 border border-purple-500/30 rounded-xl max-w-xl mx-auto bg-purple-950/20">
+      <p class="text-lg">如果第一反应是担心 → 你没有<span class="text-purple-400">承载财富的容器</span></p>
+      <p class="text-gray-500 text-sm mt-2">你在用一个漏水的桶接水，接多少都会流干</p>
+    </div>
+  </div>
+</div>
+
+<!-- S7: 塔罗显影 -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-3"></div>
+  <div class="slide-content">
+    <div class="symbol">🎴</div>
+    <h1 class="text-5xl font-bold mb-8">塔罗显影<br>你的财富拦路虎</h1>
+    <p class="text-gray-600 text-base mb-8">身体报错是"果"，潜意识木马是"因"</p>
+    <div class="grid grid-cols-4 gap-6 max-w-4xl mx-auto text-left">
+      <div class="p-5 border border-gray-800 rounded-xl text-center">
+        <p class="text-2xl mb-2">👿</p>
+        <p class="font-bold text-sm mb-2">恶魔</p>
+        <p class="text-gray-600 text-xs leading-relaxed">金钱的囚徒</p>
+        <p class="text-rose-400 text-xs mt-2">→ 拿回主权</p>
+      </div>
+      <div class="p-5 border border-gray-800 rounded-xl text-center">
+        <p class="text-2xl mb-2">👑</p>
+        <p class="font-bold text-sm mb-2">皇帝</p>
+        <p class="text-gray-600 text-xs leading-relaxed">太想掌控一切</p>
+        <p class="text-purple-400 text-xs mt-2">→ 放开手</p>
+      </div>
+      <div class="p-5 border border-gray-800 rounded-xl text-center">
+        <p class="text-2xl mb-2">🔄</p>
+        <p class="font-bold text-sm mb-2">倒吊人</p>
+        <p class="text-gray-600 text-xs leading-relaxed">赚钱必须吃苦</p>
+        <p class="text-amber-400 text-xs mt-2">→ 价值才值钱</p>
+      </div>
+      <div class="p-5 border border-gray-800 rounded-xl text-center">
+        <p class="text-2xl mb-2">🌙</p>
+        <p class="font-bold text-sm mb-2">月亮</p>
+        <p class="text-gray-600 text-xs leading-relaxed">被恐惧吓死</p>
+        <p class="text-teal-400 text-xs mt-2">→ 当下即底气</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S8: 恐惧的税 -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="slide-content">
+    <div class="symbol">💸</div>
+    <h1 class="text-5xl font-bold mb-8">这些年<br>你交了多少钱的<br><span class="text-rose-400">恐惧税</span>？</h1>
+    <p class="text-xl text-gray-500 max-w-2xl mx-auto">
+      不敢要价、不敢投资、在机会面前畏缩——<br>
+      <strong class="text-white">这些都是你付给潜意识木马的隐形税</strong>
+    </p>
+  </div>
+</div>
+
+<!-- S9: 觉察 vs 清理 -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-3"></div>
+  <div class="slide-content">
+    <div class="symbol">💡</div>
+    <h1 class="text-5xl font-bold mb-8">觉察 ≠ 清理</h1>
+    <div class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed mb-8">
+      <p class="mb-4">塔罗帮你打开灯，照见垃圾。</p>
+      <p>看清楚垃圾在哪，<strong class="text-white">不等于垃圾消失</strong>。</p>
+    </div>
+    <div class="p-5 border border-amber-500/30 rounded-xl max-w-xl mx-auto bg-amber-950/20">
+      <p class="text-lg">那堆垃圾在潜意识里堆了<span class="text-amber-400">二三十年</span></p>
+      <p class="text-gray-400 text-sm mt-2">你需要专业的力量，帮你彻底删除</p>
+    </div>
+  </div>
+</div>
+
+<!-- S10: 爱 = 创造模式 -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="slide-content">
+    <h1 class="text-5xl font-bold mb-8">爱 = 创造模式</h1>
+    <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed mb-10">
+      因为热爱而交付价值 → 扩张<br>
+      因为恐惧而硬抗执行 → 萎缩
+    </p>
+    <div class="p-6 border border-purple-500/30 rounded-2xl max-w-2xl mx-auto bg-purple-950/20">
+      <p class="text-lg font-bold mb-2">财富的真相</p>
+      <p class="text-gray-400 text-base">"爱"在商业逻辑里 = 极致的价值交付<br>
+      在能量逻辑里 = 无限的扩张感</p>
+    </div>
+  </div>
+</div>
+
+<!-- S11: 科学背书 -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="slide-content">
+    <div class="energy-line"></div>
+    <h1 class="text-4xl font-bold mb-10">这不是玄学<br>这是<span class="text-purple-400">物理学</span></h1>
+    <div class="grid grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+      <div class="p-6 border border-gray-800 rounded-xl">
+        <p class="text-purple-400 text-sm tracking-widest mb-3">爱因斯坦</p>
+        <p class="text-lg leading-relaxed text-gray-300">"一切都是能量。匹配你想要的频率，你就能得到那种现实。"</p>
+      </div>
+      <div class="p-6 border border-gray-800 rounded-xl">
+        <p class="text-purple-400 text-sm tracking-widest mb-3">霍金斯能量层级</p>
+        <p class="text-lg leading-relaxed text-gray-300">
+          恐惧 = <span class="text-rose-400">100</span><br>
+          爱 = <span class="text-teal-400">500</span><br><br>
+          <span class="text-gray-600 text-sm">用100分追500分，物理上不成立。</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S12: SRT -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="slide-content">
+    <div class="symbol">✨</div>
+    <h1 class="text-5xl font-bold mb-8">SRT深度清理</h1>
+    <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed mb-8">
+      彻底删除恐惧木马程序<br>
+      打开财富能量管道
+    </p>
+    <p class="text-gray-600 text-base">当你的管道通了，钱只是能量的副产品</p>
+  </div>
+</div>
+
+<!-- S13: 结尾 -->
+<div class="slide">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="slide-content">
+    <div class="big-quote">"</div>
+    <p class="text-4xl font-black leading-relaxed mb-8">
+      当你成为<br><span class="text-purple-400">那个磁场本身</span><br>你不需要追钱
+    </p>
+    <div class="energy-line"></div>
+    <p class="text-gray-500 text-lg">钱会像闻到花香的蝴蝶<br>疯狂地扑向你</p>
+    <p class="mt-12 text-gray-600 text-sm tracking-widest">欢喜 · 18年 · 3000+小时</p>
+  </div>
+</div>
+
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="page-number" id="pageNumber"></div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const progressBar = document.getElementById('progressBar');
+const pageNumber = document.getElementById('pageNumber');
+let currentSlide = 0;
+slides.forEach((_, i) => { const d = document.createElement('div'); d.className = `progress-dot ${i===0?'active':''}`; d.onclick = () => go(i); progressBar.appendChild(d); });
+function update() {
+  slides.forEach((s,i) => { s.classList.remove('active','prev'); if(i===currentSlide) s.classList.add('active'); else if(i<currentSlide) s.classList.add('prev'); });
+  document.querySelectorAll('.progress-dot').forEach((d,i) => d.classList.toggle('active', i===currentSlide));
+  pageNumber.textContent = `${String(currentSlide+1).padStart(2,'0')} / ${slides.length}`;
+}
+function next() { if(currentSlide < slides.length-1) { currentSlide++; update(); } }
+function prev() { if(currentSlide > 0) { currentSlide--; update(); } }
+function go(i) { currentSlide = i; update(); }
+document.addEventListener('keydown', e => { if(e.key==='ArrowRight'||e.key===' ') next(); else if(e.key==='ArrowLeft') prev(); });
+document.addEventListener('touchstart', e => { window._tx = e.touches[0].clientX; });
+document.addEventListener('touchend', e => { const d = window._tx - e.changedTouches[0].clientX; if(Math.abs(d)>50) d>0?next():prev(); });
+update();
+</script>
+</body>
+</html>

@@ -19,7 +19,7 @@ DEFAULT_COVER = '/Users/huanxi/.openclaw/workspace-neirong/images/20260408_aquar
 def get_token():
     appid = os.environ.get("WECHAT_APPID") or os.environ.get("WECHAT_APP_ID")
     secret = os.environ.get("WECHAT_APPSECRET") or os.environ.get("WECHAT_APP_SECRET")
-    s = requests.Session(); s.trust_env = False
+    s = requests.Session(); s.trust_env = True
     r = s.get("https://api.weixin.qq.com/cgi-bin/token", params={"grant_type": "client_credential", "appid": appid, "secret": secret}, timeout=60)
     return s, r.json().get("access_token")
 

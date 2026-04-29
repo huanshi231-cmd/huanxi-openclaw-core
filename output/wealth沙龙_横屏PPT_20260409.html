@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>从"盯着余额"到"吸引财富" — 欢喜</title>
+  <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/tailwindcss/3.0.23/tailwind.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans SC', sans-serif; background: #000; color: #fff; overflow: hidden; }
+    .slides-container { width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center; background: #0a0a0a; }
+    .slide {
+      width: 100%; height: 100%;
+      aspect-ratio: 16/9;
+      position: absolute;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 4rem 8rem;
+      opacity: 0; transform: translateX(60px);
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+    .slide.active { opacity: 1; transform: translateX(0); }
+    .slide.prev { opacity: 0; transform: translateX(-60px); }
+    .light-spot { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.25; pointer-events: none; }
+    .light-spot-1 { width: 500px; height: 500px; background: #6366f1; top: -150px; right: -150px; animation: float1 20s ease-in-out infinite; }
+    .light-spot-2 { width: 400px; height: 400px; background: #8b5cf6; bottom: -100px; left: -100px; animation: float2 25s ease-in-out infinite; }
+    .light-spot-3 { width: 300px; height: 300px; background: #14b8a6; top: 50%; left: 50%; transform: translate(-50%, -50%); animation: float3 18s ease-in-out infinite; }
+    @keyframes float1 { 0%,100%{transform:translate(0,0)} 25%{transform:translate(-60px,40px)} 50%{transform:translate(40px,60px)} 75%{transform:translate(60px,-30px)} }
+    @keyframes float2 { 0%,100%{transform:translate(0,0)} 33%{transform:translate(50px,-50px)} 66%{transform:translate(-40px,40px)} }
+    @keyframes float3 { 0%,100%{transform:translate(-50%,-50%) scale(1)} 50%{transform:translate(-50%,-50%) scale(1.3)} }
+    .slide-content { position: relative; z-index: 10; text-align: center; width: 100%; max-width: 1200px; }
+    .slide-content.left { text-align: left; }
+    .slide-content.right { text-align: right; }
+    .progress-bar { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 100; }
+    .progress-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.25); cursor: pointer; transition: all 0.3s; }
+    .progress-dot.active { background: #fff; transform: scale(1.4); }
+    .progress-dot:hover { background: rgba(255,255,255,0.6); }
+    .page-number { position: fixed; bottom: 24px; right: 40px; font-size: 0.8rem; color: rgba(255,255,255,0.35); z-index: 100; }
+    .chapter-tag { display: inline-block; padding: 0.4rem 1.2rem; border: 1px solid rgba(255,255,255,0.3); border-radius: 9999px; font-size: 0.75rem; letter-spacing: 0.1em; color: rgba(255,255,255,0.6); margin-bottom: 2rem; }
+    .highlight { background: linear-gradient(180deg, transparent 50%, rgba(99,102,241,0.3) 50%); padding: 0 4px; }
+  </style>
+</head>
+<body>
+<div class="slides-container">
+
+<!-- Slide 1: 封面 -->
+<div class="slide active">
+  <div class="light-spot light-spot-1"></div>
+  <div class="light-spot light-spot-2"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">线上沙龙 · 2024年3月11日</div>
+    <h1 class="text-6xl font-black leading-tight mb-8">从"盯着余额"<br>到"吸引财富"</h1>
+    <p class="text-xl font-light text-gray-400 mb-12">终极财富能量疗愈沙龙</p>
+    <div class="flex items-center justify-center gap-8 text-gray-500 text-sm">
+      <span>🎴 塔罗显影</span>
+      <span>⚡ 能量调频</span>
+      <span>💎 SRT清理</span>
+    </div>
+    <p class="mt-16 text-gray-600 text-sm">主讲人：欢喜</p>
+  </div>
+</div>
+
+<!-- Slide 2: 开场 -->
+<div class="slide">
+  <div class="light-spot light-spot-2"></div>
+  <div class="light-spot light-spot-3"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">第一阶段</div>
+    <h1 class="text-5xl font-bold mb-10">卸载焦虑<br>回归自己</h1>
+    <p class="text-xl font-light text-gray-400 leading-relaxed max-w-2xl mx-auto">
+      请轻轻放下手机，闭上眼。<br>
+      这一刻，你不是老板、不是员工、不是谁的爸妈。<br>
+      <strong class="text-white">这一刻，你只是你自己。</strong>
+    </p>
+    <p class="mt-10 text-gray-600 text-base">接下来的90分钟，是你和财富能量的一场深度约会</p>
+  </div>
+</div>
+
+<!-- Slide 3: 核心问题 -->
+<div class="slide">
+  <div class="light-spot light-spot-1"></div>
+  <div class="light-spot light-spot-3"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">第二阶段</div>
+    <h1 class="text-6xl font-black mb-8">你是在攒钱<br>还是在攒<span class="text-indigo-400">恐惧</span>？</h1>
+    <p class="text-xl text-gray-500 max-w-3xl mx-auto leading-relaxed">
+      如果你是带着"怕出事"的心态去攒钱，<br>最后那钱多半真的会花在"出事"上。
+    </p>
+  </div>
+</div>
+
+<!-- Slide 4: 底层心法 -->
+<div class="slide">
+  <div class="light-spot light-spot-2"></div>
+  <div class="light-spot light-spot-3"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">核心心法</div>
+    <h1 class="text-4xl font-bold mb-6">钱不是财富本身<br>它是能量的影子</h1>
+    <div class="mt-8 p-6 border border-gray-800 rounded-2xl max-w-2xl mx-auto text-left">
+      <p class="text-lg text-gray-300 leading-relaxed">
+        <strong class="text-white">你</strong>是那个发光的灯泡。<br>
+        <strong class="text-white">钱</strong>是那个随你而动的影子。<br><br>
+        如果你这个灯泡不亮，<br>再怎么抓影子也是徒劳。
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 5: 金句 -->
+<div class="slide">
+  <div class="light-spot light-spot-1"></div>
+  <div class="light-spot light-spot-2"></div>
+  <div class="slide-content">
+    <span class="text-8xl text-gray-700 block mb-4">"</span>
+    <p class="text-3xl font-bold leading-relaxed mb-8">钱不是省出来的<br>是流出来的</p>
+    <div class="text-gray-500 text-lg leading-relaxed">
+      <p class="mb-2">当你盯着余额看，你看到的是缩小的数字。</p>
+      <p>当你盯着<span class="text-indigo-400">价值</span>看，你看到的才是财富的入场券。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 6: 灵魂审计 -->
+<div class="slide">
+  <div class="light-spot light-spot-2"></div>
+  <div class="light-spot light-spot-3"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">第三阶段</div>
+    <h1 class="text-5xl font-bold mb-10">灵魂审计<br>你的财富底气</h1>
+    <div class="grid grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+      <div class="p-6 border border-gray-800 rounded-xl">
+        <p class="text-gray-500 text-sm mb-3">问题一</p>
+        <p class="text-lg font-medium mb-4">付房租/交学费时，你的感觉是？</p>
+        <div class="space-y-3 text-base text-gray-400">
+          <div class="flex items-center gap-3"><span class="text-indigo-400 font-bold">A</span> 心在滴血，卡里又少了一笔</div>
+          <div class="flex items-center gap-3"><span class="text-teal-400 font-bold">B</span> 换到了好地段/学到了本事，值</div>
+        </div>
+      </div>
+      <div class="p-6 border border-gray-800 rounded-xl">
+        <p class="text-gray-500 text-sm mb-3">问题二</p>
+        <p class="text-lg font-medium mb-4">想买好东西送自己时，你内心对白是？</p>
+        <div class="space-y-3 text-base text-gray-400">
+          <div class="flex items-center gap-3"><span class="text-indigo-400 font-bold">A</span> 我舍不得，太奢侈了</div>
+          <div class="flex items-center gap-3"><span class="text-teal-400 font-bold">B</span> 我值得拥有，有能力赚回来</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 7: 体感测试 -->
+<div class="slide">
+  <div class="light-spot light-spot-1"></div>
+  <div class="light-spot light-spot-3"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">第四阶段</div>
+    <h1 class="text-5xl font-bold mb-8">能量显微镜<br>身体在报错</h1>
+    <div class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed space-y-4">
+      <p>想象银行卡里只有100块，明天要交房租。</p>
+      <p>感受一下——<span class="text-white">身体哪个部位最先收缩？</span></p>
+      <p class="text-gray-600 text-base">胃抽动？喉咙发紧？胸口闷？</p>
+    </div>
+    <p class="mt-10 text-lg text-indigo-400">这就是你潜意识里"匮乏木马"驻扎的坐标</p>
+  </div>
+</div>
+
+<!-- Slide 8: 50万测试 -->
+<div class="slide">
+  <div class="light-spot light-spot-2"></div>
+  <div class="light-spot light-spot-3"></div>
+  <div class="slide-content">
+    <h1 class="text-5xl font-black mb-8">想象有人<br>突然给了你<span class="text-indigo-400">50万</span></h1>
+    <div class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
+      <p>你的第一反应是什么？</p>
+      <p class="mt-2">是终于松一口气？</p>
+      <p>还是紧接着在想——怎么存、怎么藏、万一丢了怎么办？</p>
+    </div>
+    <div class="p-5 border border-indigo-500/30 rounded-xl max-w-2xl mx-auto bg-indigo-950/20">
+      <p class="text-lg">如果你拿到50万后的第一反应依然是<strong class="text-indigo-400">担心和防守</strong>——</p>
+      <p class="text-base text-gray-400 mt-2">你的财富卡点根本不在钱多少，而在于你根本没有"承载财富的容器"。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 9: 塔罗镜像 -->
+<div class="slide">
+  <div class="light-spot light-spot-1"></div>
+  <div class="light-spot light-spot-2"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">第五阶段</div>
+    <h1 class="text-5xl font-bold mb-8">塔罗显影<br>财富拦路虎</h1>
+    <p class="text-gray-500 text-lg mb-8">身体的紧张是"果"，潜意识里的木马是"因"。<br>塔罗是潜意识的CT机。</p>
+    <div class="grid grid-cols-2 gap-6 max-w-4xl mx-auto text-left">
+      <div class="p-5 border border-gray-800 rounded-xl">
+        <p class="text-2xl mb-2">👿 <strong>恶魔</strong></p>
+        <p class="text-gray-400 text-sm">你是金钱的囚徒。为钱工作，不是钱在为你工作。</p>
+        <p class="text-indigo-400 text-sm mt-2">→ 拿回主权，你才是主人</p>
+      </div>
+      <div class="p-5 border border-gray-800 rounded-xl">
+        <p class="text-2xl mb-2">👑 <strong>皇帝</strong></p>
+        <p class="text-gray-400 text-sm">太想掌控一切，每一分钱都锁死，叫"死水"。</p>
+        <p class="text-indigo-400 text-sm mt-2">→ 放开手，才能接住丰盛</p>
+      </div>
+      <div class="p-5 border border-gray-800 rounded-xl">
+        <p class="text-2xl mb-2">🔄 <strong>倒吊人</strong></p>
+        <p class="text-gray-400 text-sm">潜意识觉得"赚钱必须吃苦"，自我牺牲的游戏。</p>
+        <p class="text-indigo-400 text-sm mt-2">→ 价值才值钱，停止内耗</p>
+      </div>
+      <div class="p-5 border border-gray-800 rounded-xl">
+        <p class="text-2xl mb-2">🌙 <strong>月亮</strong></p>
+        <p class="text-gray-400 text-sm">总担心明天会破产，还没开始就被自己吓死。</p>
+        <p class="text-indigo-400 text-sm mt-2">→ 当下的底气才是真的</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 10: 隐形成本 -->
+<div class="slide">
+  <div class="light-spot light-spot-1"></div>
+  <div class="light-spot light-spot-3"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">第六阶段</div>
+    <h1 class="text-5xl font-black mb-8">隐形成本<br>你交给"恐惧"的税</h1>
+    <div class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
+      <p>因为那个卡点——</p>
+      <p class="mt-2">不敢要价、不敢投资、在机会面前畏畏缩缩</p>
+      <p class="mt-4 text-gray-600 text-base">这些年你少赚了多少钱？</p>
+    </div>
+    <div class="p-5 border border-gray-800 rounded-xl max-w-2xl mx-auto text-center">
+      <p class="text-lg text-gray-300">这些"本该属于你却没拿到的钱"</p>
+      <p class="text-2xl font-bold mt-2 text-indigo-400">就是你付给潜意识木马的"隐形税"</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 11: 高纬翻转 -->
+<div class="slide">
+  <div class="light-spot light-spot-2"></div>
+  <div class="light-spot light-spot-3"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">第七阶段</div>
+    <h1 class="text-5xl font-bold mb-8">高纬翻转<br><span class="text-rose-400">爱</span>才是财富的顶级燃料</h1>
+    <div class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-8">
+      <p class="mb-2">财富不是你"追"回来的，是你"调频"调出来的。</p>
+      <p>恐惧 = <span class="text-rose-400">隔离</span>。财富 = <span class="text-teal-400">高频</span>。</p>
+    </div>
+    <div class="grid grid-cols-3 gap-6 max-w-4xl mx-auto text-center">
+      <div class="p-5 bg-gray-900/50 rounded-xl">
+        <p class="text-4xl mb-3">😰</p>
+        <p class="font-bold mb-2">盯着余额</p>
+        <p class="text-gray-500 text-sm">恐惧频率 ≈ 100</p>
+        <p class="text-rose-400 text-sm mt-1">财富绝缘</p>
+      </div>
+      <div class="p-5 bg-gray-900/50 rounded-xl">
+        <p class="text-4xl mb-3">⚡</p>
+        <p class="font-bold mb-2">调频</p>
+        <p class="text-gray-500 text-sm">从恐惧 → 爱</p>
+        <p class="text-teal-400 text-sm mt-1">打开管道</p>
+      </div>
+      <div class="p-5 bg-gray-900/50 rounded-xl">
+        <p class="text-4xl mb-3">💎</p>
+        <p class="font-bold mb-2">爱的频率</p>
+        <p class="text-gray-500 text-sm">爱 = 500</p>
+        <p class="text-indigo-400 text-sm mt-1">财富磁铁</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 12: 科学背书 -->
+<div class="slide">
+  <div class="light-spot light-spot-1"></div>
+  <div class="light-spot light-spot-2"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">科学背书</div>
+    <h1 class="text-4xl font-bold mb-8">这不是玄学<br>这是<span class="text-indigo-400">频率学</span></h1>
+    <div class="grid grid-cols-2 gap-8 max-w-4xl mx-auto text-left">
+      <div class="p-6 border border-gray-800 rounded-xl">
+        <p class="text-gray-500 text-sm mb-3">物理学</p>
+        <p class="text-lg leading-relaxed">
+          爱因斯坦：<br>"一切都是能量。匹配你想要的频率，你就能得到那种现实。"
+        </p>
+      </div>
+      <div class="p-6 border border-gray-800 rounded-xl">
+        <p class="text-gray-500 text-sm mb-3">霍金斯能量层级</p>
+        <p class="text-lg leading-relaxed">
+          恐惧 = <strong class="text-rose-400">100</strong><br>
+          爱 = <strong class="text-teal-400">500</strong><br><br>
+          <span class="text-gray-500 text-sm">用100分追500分，物理逻辑上就不成立。</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 13: 灯与垃圾 -->
+<div class="slide">
+  <div class="light-spot light-spot-1"></div>
+  <div class="light-spot light-spot-3"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">第八阶段</div>
+    <h1 class="text-5xl font-black mb-8">觉察 ≠ 清理</h1>
+    <div class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-10">
+      <p class="mb-4">塔罗帮你打开了灯，照见了垃圾。</p>
+      <p class="mb-4">但看清楚垃圾在哪，<strong class="text-white">不等于垃圾就消失了</strong>。</p>
+      <p>灯关上之后，你下次路过还是会被绊倒。</p>
+    </div>
+    <div class="p-5 border border-amber-500/30 rounded-xl max-w-2xl mx-auto bg-amber-950/20">
+      <p class="text-lg">那堆"垃圾"在潜意识里堆了<span class="text-amber-400">二三十年</span>，太重了。</p>
+      <p class="text-base text-gray-400 mt-2">光靠听课、看几本书，是搬不动的。你需要<strong class="text-white">专业的力量</strong>。</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 14: 转化钩子 -->
+<div class="slide">
+  <div class="light-spot light-spot-2"></div>
+  <div class="light-spot light-spot-3"></div>
+  <div class="slide-content">
+    <div class="chapter-tag">第十阶段</div>
+    <h1 class="text-5xl font-bold mb-8">找回你的<br><span class="text-teal-400">源头主权</span></h1>
+    <div class="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed mb-10">
+      <p>通过SRT深度清理，把恐惧拿掉</p>
+      <p class="mt-2">让那个本自具足的<span class="text-teal-400">"爱"</span>显现出来</p>
+    </div>
+    <div class="p-8 border border-teal-500/40 rounded-2xl max-w-2xl mx-auto bg-teal-950/20">
+      <p class="text-2xl font-bold mb-4">5个"金钱卡点深度扫描"名额</p>
+      <p class="text-gray-400 text-lg">这不是一个咨询，是一次深度的灵魂手术</p>
+      <p class="text-gray-600 text-base mt-2">私信联系</p>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 15: 结尾 -->
+<div class="slide">
+  <div class="light-spot light-spot-1"></div>
+  <div class="light-spot light-spot-2"></div>
+  <div class="light-spot light-spot-3"></div>
+  <div class="slide-content">
+    <h1 class="text-6xl font-black mb-6">你是那个<br><span class="text-indigo-400">磁场本身</span></h1>
+    <p class="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed mb-12">
+      当你不再向金钱下跪，财富才会真正向你奔跑。<br>
+      当你成为那个磁场，你不需要追钱。<br>
+      钱会像闻到了花香的蝴蝶，疯狂地扑向你。
+    </p>
+    <p class="text-2xl font-light text-gray-300">— 欢喜 · 18年 · 3000+小时 —</p>
+    <p class="text-gray-600 mt-4">🎴 塔罗 · 现代占星 · SRT疗愈</p>
+  </div>
+</div>
+
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="page-number" id="pageNumber"></div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const progressBar = document.getElementById('progressBar');
+const pageNumber = document.getElementById('pageNumber');
+let currentSlide = 0;
+slides.forEach((_, i) => { const d = document.createElement('div'); d.className = `progress-dot ${i===0?'active':''}`; d.onclick = () => go(i); progressBar.appendChild(d); });
+function update() {
+  slides.forEach((s,i) => { s.classList.remove('active','prev'); if(i===currentSlide) s.classList.add('active'); else if(i<currentSlide) s.classList.add('prev'); });
+  document.querySelectorAll('.progress-dot').forEach((d,i) => d.classList.toggle('active', i===currentSlide));
+  pageNumber.textContent = `${currentSlide+1} / ${slides.length}`;
+}
+function next() { if(currentSlide < slides.length-1) { currentSlide++; update(); } }
+function prev() { if(currentSlide > 0) { currentSlide--; update(); } }
+function go(i) { currentSlide = i; update(); }
+document.addEventListener('keydown', e => { if(e.key==='ArrowRight'||e.key===' ') next(); else if(e.key==='ArrowLeft') prev(); });
+document.addEventListener('touchstart', e => { window._tx = e.touches[0].clientX; });
+document.addEventListener('touchend', e => { const d = window._tx - e.changedTouches[0].clientX; if(Math.abs(d)>50) d>0?next():prev(); });
+update();
+</script>
+</body>
+</html>

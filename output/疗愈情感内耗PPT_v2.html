@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>停止内耗 · 找回自己 - 欢喜老师</title>
+  
+  <!-- TailwindCSS CDN -->
+  <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/tailwindcss/3.0.23/tailwind.min.js"></script>
+  
+  <!-- 字体 -->
+  <link href="https://fonts.loli.net/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Noto Sans SC', 'Inter', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow: hidden;
+    }
+    
+    /* 幻灯片容器 */
+    .slides-container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #0a0a0a;
+    }
+    
+    /* 单个幻灯片 */
+    .slide {
+      width: 100%;
+      height: 100%;
+      max-width: 450px;
+      max-height: 800px;
+      aspect-ratio: 9/16;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
+    }
+    
+    .slide.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .slide.prev {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    
+    /* 动态光斑 */
+    .light-spot {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.3;
+      pointer-events: none;
+    }
+    
+    .light-spot-1 {
+      width: 300px;
+      height: 300px;
+      background: #3b82f6;
+      top: -100px;
+      right: -100px;
+      animation: float1 20s ease-in-out infinite;
+    }
+    
+    .light-spot-2 {
+      width: 250px;
+      height: 250px;
+      background: #8b5cf6;
+      bottom: -80px;
+      left: -80px;
+      animation: float2 25s ease-in-out infinite;
+    }
+    
+    .light-spot-3 {
+      width: 200px;
+      height: 200px;
+      background: #06b6d4;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: float3 18s ease-in-out infinite;
+    }
+    
+    .light-spot-pink {
+      width: 280px;
+      height: 280px;
+      background: #ec4899;
+      top: 30%;
+      right: -50px;
+      animation: float1 22s ease-in-out infinite;
+    }
+    
+    .light-spot-orange {
+      width: 260px;
+      height: 260px;
+      background: #f97316;
+      bottom: 20%;
+      left: -30px;
+      animation: float2 19s ease-in-out infinite;
+    }
+    
+    @keyframes float1 {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(-50px, 30px); }
+      50% { transform: translate(30px, 50px); }
+      75% { transform: translate(50px, -20px); }
+    }
+    
+    @keyframes float2 {
+      0%, 100% { transform: translate(0, 0); }
+      33% { transform: translate(40px, -40px); }
+      66% { transform: translate(-30px, 30px); }
+    }
+    
+    @keyframes float3 {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); }
+      50% { transform: translate(-50%, -50%) scale(1.2); }
+    }
+    
+    /* 内容层 */
+    .slide-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      width: 100%;
+    }
+    
+    /* 进度条 */
+    .progress-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 100;
+    }
+    
+    .progress-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .progress-dot.active {
+      background: #fff;
+      transform: scale(1.3);
+    }
+    
+    .progress-dot:hover {
+      background: rgba(255,255,255,0.6);
+    }
+    
+    /* 页码 */
+    .page-number {
+      position: fixed;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.4);
+      z-index: 100;
+    }
+    
+    /* 欧卡互动样式 */
+    .oh-card-box {
+      width: 120px;
+      height: 160px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto;
+      background: linear-gradient(135deg, rgba(139,92,246,0.2) 0%, rgba(236,72,153,0.2) 100%);
+    }
+    
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(236,72,153,0.15) 0%, rgba(139,92,246,0.15) 100%);
+      border: 1px solid rgba(236,72,153,0.3);
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="slides-container">
+    
+    <!-- 幻灯片 1: 封面页 -->
+    <div class="slide active">
+      <div class="light-spot light-spot-1"></div>
+      <div class="light-spot light-spot-2"></div>
+      <div class="slide-content">
+        <h1 class="text-5xl font-black mb-6 leading-tight">停止内耗</h1>
+        <h2 class="text-4xl font-bold mb-8 text-purple-400">找回自己</h2>
+        <p class="text-xl font-light text-gray-400">情感内耗深度疗愈工作坊</p>
+        <p class="text-sm font-light text-gray-500 mt-12">欢喜老师 · 18年塔罗疗愈经验</p>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 2: 什么是内耗？ -->
+    <div class="slide">
+      <div class="light-spot light-spot-2"></div>
+      <div class="light-spot light-spot-3"></div>
+      <div class="slide-content">
+        <h1 class="text-4xl font-black mb-8">什么是情感内耗？</h1>
+        <div class="text-left highlight-box">
+          <p class="text-xl font-light leading-relaxed">
+            <span class="text-pink-400 font-bold">心里像住了两个人</span><br><br>
+            一个在拼命往前冲<br>
+            另一个在拼命往后拽<br><br>
+            你什么都没做<br>
+            却<span class="text-pink-400 font-bold">已经累得不行</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 3: 内耗信号1 -->
+    <div class="slide">
+      <div class="light-spot light-spot-1"></div>
+      <div class="light-spot-pink"></div>
+      <div class="slide-content">
+        <span class="text-6xl font-black text-red-500 mb-4">⚠️</span>
+        <h2 class="text-3xl font-bold mb-6">信号一：反复回想</h2>
+        <p class="text-lg font-light text-gray-400 leading-relaxed">
+          一件事过去很久了<br>
+          脑子里还在一遍遍重播<br>
+          <span class="text-red-400">不放过对方，更不放过自己</span>
+        </p>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 4: 内耗信号2 -->
+    <div class="slide">
+      <div class="light-spot light-spot-2"></div>
+      <div class="light-spot light-spot-3"></div>
+      <div class="slide-content">
+        <span class="text-6xl font-black text-orange-500 mb-4">⚠️</span>
+        <h2 class="text-3xl font-bold mb-6">信号二：自我攻击</h2>
+        <p class="text-lg font-light text-gray-400 leading-relaxed">
+          总觉得是自己不够好<br>
+          把所有错都揽在身上<br>
+          <span class="text-orange-400">内心住了个24小时开庭的法官</span>
+        </p>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 5: 内耗信号3 -->
+    <div class="slide">
+      <div class="light-spot-pink"></div>
+      <div class="light-spot-orange"></div>
+      <div class="slide-content">
+        <span class="text-6xl font-black text-yellow-500 mb-4">⚠️</span>
+        <h2 class="text-3xl font-bold mb-6">信号三：过度思考</h2>
+        <p class="text-lg font-light text-gray-400 leading-relaxed">
+          一件事还没发生<br>
+          已经在脑子里演完了所有坏结局<br>
+          <span class="text-yellow-400">提前透支10倍的恐惧</span>
+        </p>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 6: 内耗自测 -->
+    <div class="slide">
+      <div class="light-spot light-spot-1"></div>
+      <div class="light-spot light-spot-3"></div>
+      <div class="slide-content">
+        <h2 class="text-3xl font-bold mb-8">中了3条，你就在内耗</h2>
+        <ul class="space-y-4 text-lg text-left pl-4">
+          <li class="text-gray-300">✓ 睡不着，脑子停不下来</li>
+          <li class="text-gray-300">✓ 容易后悔，总说"早知道..."</li>
+          <li class="text-gray-300">✓ 害怕别人不开心</li>
+          <li class="text-gray-300">✓ 经常觉得"我好累"</li>
+          <li class="text-gray-300">✓ 明明什么都没做</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 7: 欧卡互动开场 -->
+    <div class="slide">
+      <div class="light-spot-pink"></div>
+      <div class="light-spot light-spot-2"></div>
+      <div class="slide-content">
+        <h1 class="text-4xl font-black mb-6 text-purple-400">🎴 欧卡自我觉察</h1>
+        <p class="text-xl font-light text-gray-400 mb-8">用一张牌，看见你的潜意识</p>
+        <div class="oh-card-box">
+          <span class="text-5xl">🃏</span>
+        </div>
+        <p class="text-lg font-light text-gray-500 mt-6">深呼吸，凭直觉选一张牌...</p>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 8: 欧卡问题1 -->
+    <div class="slide">
+      <div class="light-spot light-spot-1"></div>
+      <div class="light-spot light-spot-3"></div>
+      <div class="slide-content">
+        <div class="oh-card-box mb-6">
+          <span class="text-4xl">🔮</span>
+        </div>
+        <h2 class="text-2xl font-bold mb-6">第一个问题</h2>
+        <div class="highlight-box">
+          <p class="text-xl leading-relaxed">
+            你在这张牌里<br>
+            <span class="text-cyan-400 font-bold">看到了什么？</span>
+          </p>
+        </div>
+        <p class="text-sm font-light text-gray-500 mt-6">（给30秒，默默说出答案）</p>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 9: 欧卡问题2 -->
+    <div class="slide">
+      <div class="light-spot light-spot-2"></div>
+      <div class="light-spot-pink"></div>
+      <div class="slide-content">
+        <div class="oh-card-box mb-6">
+          <span class="text-4xl">🔮</span>
+        </div>
+        <h2 class="text-2xl font-bold mb-6">第二个问题</h2>
+        <div class="highlight-box">
+          <p class="text-xl leading-relaxed">
+            这个画面<br>
+            <span class="text-pink-400 font-bold">让你想到了什么？</span>
+          </p>
+        </div>
+        <p class="text-sm font-light text-gray-500 mt-6">（不要思考，第一个答案就是对的）</p>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 10: 欧卡问题3 -->
+    <div class="slide">
+      <div class="light-spot light-spot-1"></div>
+      <div class="light-spot-orange"></div>
+      <div class="slide-content">
+        <div class="oh-card-box mb-6">
+          <span class="text-4xl">🔮</span>
+        </div>
+        <h2 class="text-2xl font-bold mb-6">第三个问题</h2>
+        <div class="highlight-box">
+          <p class="text-xl leading-relaxed">
+            如果这就是你的现状<br>
+            <span class="text-orange-400 font-bold">你想对它说什么？</span>
+          </p>
+        </div>
+        <p class="text-sm font-light text-gray-500 mt-6">（答案，就是潜意识给你的礼物）</p>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 11: 疗愈方法1 -->
+    <div class="slide">
+      <div class="light-spot light-spot-3"></div>
+      <div class="light-spot light-spot-2"></div>
+      <div class="slide-content">
+        <span class="text-6xl font-black text-cyan-500 mb-4">01</span>
+        <h2 class="text-3xl font-bold mb-6">抽离观察法</h2>
+        <div class="highlight-box text-left">
+          <p class="text-lg font-light leading-relaxed">
+            ✦ 想象你站在自己对面<br>
+            ✦ 看着那个纠结的自己<br>
+            ✦ 不说"我难受"<br>
+            ✦ 说"<span class="text-cyan-400 font-bold">我看到有个人在难受</span>"
+          </p>
+        </div>
+        <p class="text-sm font-light text-gray-500 mt-6">一念之转，你就不再是问题本身</p>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 12: 疗愈方法2 -->
+    <div class="slide">
+      <div class="light-spot light-spot-1"></div>
+      <div class="light-spot-pink"></div>
+      <div class="slide-content">
+        <span class="text-6xl font-black text-green-500 mb-4">02</span>
+        <h2 class="text-3xl font-bold mb-6">物理打断法</h2>
+        <div class="highlight-box text-left">
+          <p class="text-lg font-light leading-relaxed">
+            ✦ 一旦发现开始胡思乱想<br>
+            ✦ 立刻！站起来<br>
+            ✦ 喝口水 · 深呼吸 · 拍三下桌子<br>
+            ✦ <span class="text-green-400 font-bold">用行动打断负面循环</span>
+          </p>
+        </div>
+        <p class="text-sm font-light text-gray-500 mt-6">身体动了，心就静了</p>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 13: 三个日常练习 -->
+    <div class="slide">
+      <div class="light-spot light-spot-2"></div>
+      <div class="light-spot-orange"></div>
+      <div class="slide-content">
+        <h2 class="text-2xl font-bold mb-8">三个日常疗愈练习</h2>
+        <ul class="space-y-6 text-xl text-left pl-8">
+          <li class="text-gray-300">✓ 睡前写<span class="text-purple-400">"放下清单"</span></li>
+          <li class="text-gray-300">✓ 每天三次<span class="text-cyan-400">深呼吸</span></li>
+          <li class="text-gray-300">✓ 镜子前说<span class="text-pink-400">"辛苦了"</span></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 14: 为什么需要专业疗愈？ -->
+    <div class="slide">
+      <div class="light-spot light-spot-1"></div>
+      <div class="light-spot light-spot-3"></div>
+      <div class="slide-content">
+        <h2 class="text-3xl font-bold mb-8">为什么需要专业疗愈？</h2>
+        <div class="text-left">
+          <p class="text-lg font-light text-gray-400 mb-4 leading-relaxed">
+            自己在黑夜里走了很久<br>
+            依然找不到出口
+          </p>
+          <p class="text-lg font-light text-gray-400 mb-4 leading-relaxed">
+            道理都懂<br>
+            但就是<span class="text-pink-400 font-bold">做不到</span>
+          </p>
+          <p class="text-lg font-light text-gray-400 leading-relaxed">
+            因为内耗的根源<br>
+            藏在<span class="text-purple-400 font-bold">潜意识深处</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 15: 欢喜老师介绍 -->
+    <div class="slide">
+      <div class="light-spot light-spot-2"></div>
+      <div class="light-spot-pink"></div>
+      <div class="slide-content">
+        <div class="w-24 h-24 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 mx-auto mb-6 flex items-center justify-center">
+          <span class="text-4xl">🔮</span>
+        </div>
+        <h2 class="text-2xl font-bold mb-4">欢喜老师</h2>
+        <p class="text-lg font-light text-gray-400 mb-2">18年塔罗疗愈经验</p>
+        <p class="text-lg font-light text-gray-400 mb-2">3000+ 小时个案咨询</p>
+        <p class="text-lg font-light text-gray-400 mb-6">SRT灵摆疗愈 · 现代占星</p>
+        <div class="highlight-box">
+          <p class="text-xl">
+            <span class="text-pink-400 font-bold">陪你穿越黑暗</span><br>
+            找回自己的光
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 16: 个案预约引导 -->
+    <div class="slide">
+      <div class="light-spot light-spot-1"></div>
+      <div class="light-spot light-spot-2"></div>
+      <div class="light-spot-pink"></div>
+      <div class="slide-content">
+        <h1 class="text-3xl font-bold mb-8 leading-relaxed">
+          你不需要<br>
+          一个人硬撑
+        </h1>
+        <div class="highlight-box mb-8">
+          <p class="text-xl leading-relaxed">
+            扫码添加欢喜老师<br>
+            <span class="text-cyan-400 font-bold">预约1对1深度疗愈</span>
+          </p>
+        </div>
+        <div class="w-32 h-32 bg-white rounded-lg mx-auto mb-4 flex items-center justify-center">
+          <span class="text-4xl text-gray-800">📱</span>
+        </div>
+        <p class="text-lg font-light text-gray-400">备注："停止内耗"</p>
+        <p class="text-sm font-light text-gray-500 mt-8">前10名预约 · 赠送欧卡解读1次</p>
+      </div>
+    </div>
+    
+    <!-- 幻灯片 17: 结尾金句 -->
+    <div class="slide">
+      <div class="light-spot light-spot-1"></div>
+      <div class="light-spot light-spot-2"></div>
+      <div class="light-spot light-spot-3"></div>
+      <div class="slide-content">
+        <span class="text-6xl text-gray-600 block mb-2">"</span>
+        <p class="text-2xl font-bold mb-6 leading-relaxed">
+          你不需要<br>
+          成为完美的人<br>
+          只需要<br>
+          成为<span class="text-pink-400">完整的你</span>
+        </p>
+        <span class="text-lg font-light text-gray-500">— 欢喜</span>
+        <p class="text-sm font-light text-gray-500 mt-12">@欢喜幸运 | 塔罗 · 占星 · SRT疗愈</p>
+      </div>
+    </div>
+    
+  </div>
+  
+  <!-- 进度条 -->
+  <div class="progress-bar" id="progressBar"></div>
+  
+  <!-- 页码 -->
+  <div class="page-number" id="pageNumber">1 / 17</div>
+  
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const progressBar = document.getElementById('progressBar');
+    const pageNumber = document.getElementById('pageNumber');
+    let currentSlide = 0;
+    
+    // 初始化进度条
+    slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.className = `progress-dot ${index === 0 ? 'active' : ''}`;
+      dot.addEventListener('click', () => goToSlide(index));
+      progressBar.appendChild(dot);
+    });
+    
+    function updateSlides() {
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active', 'prev');
+        if (index === currentSlide) {
+          slide.classList.add('active');
+        } else if (index < currentSlide) {
+          slide.classList.add('prev');
+        }
+      });
+      
+      // 更新进度条
+      document.querySelectorAll('.progress-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+      
+      // 更新页码
+      pageNumber.textContent = `${currentSlide + 1} / ${slides.length}`;
+    }
+    
+    function nextSlide() {
+      if (currentSlide < slides.length - 1) {
+        currentSlide++;
+        updateSlides();
+      }
+    }
+    
+    function prevSlide() {
+      if (currentSlide > 0) {
+        currentSlide--;
+        updateSlides();
+      }
+    }
+    
+    function goToSlide(index) {
+      currentSlide = index;
+      updateSlides();
+    }
+    
+    // 键盘控制
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+    
+    // 触摸滑动支持
+    let touchStartX = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    });
+    
+    document.addEventListener('touchend', (e) => {
+      const touchEndX = e.changedTouches[0].clientX;
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) nextSlide();
+        else prevSlide();
+      }
+    });
+  </script>
+</body>
+</html>

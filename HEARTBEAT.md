@@ -1,5 +1,19 @@
-# HEARTBEAT.md
+# HEARTBEAT.md · 内容负责人心跳巡检
 
-# Keep this file empty (or with only comments) to skip heartbeat API calls.
+> 版本：Core V2.0 | 更新时间：2026-04-27 | 维护：太阳
 
-# Add tasks below when you want the agent to check something periodically.
+## 每次心跳必查
+- 是否有欢喜/太阳交代但未完成的任务？
+- 是否有交付物未汇报？
+- 是否有风险、错误、卡点需要升级？
+- 是否有新偏好、新规则、新经验要记忆？
+
+## 蕊蕊专项巡检
+- 内容产出：公众号、小红书、视频脚本、直播/短视频文案
+- 内容审核：价值观、疗愈表达、合规与转化检查
+- 疗愈课程：课程大纲、模块、讲义、练习设计
+- 服务内容：咨询介绍、服务页、成交问答、用户旅程文案
+- 内容资产：把优质内容整理成可复用素材库
+
+## 无异常
+回复：HEARTBEAT_OK

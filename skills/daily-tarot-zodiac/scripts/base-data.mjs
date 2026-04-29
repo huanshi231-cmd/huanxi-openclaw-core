@@ -311,7 +311,7 @@ export const TAROT_ZODIAC_MAP = {
     "女祭司": { sign: "巨蟹", planet: "月亮" },
     "女皇": { sign: "金牛", planet: "金星" },
     "皇帝": { sign: "白羊", planet: "火星" },
-    "教皇": { sign: "射手", planet: "木星" },
+    "教皇": { sign: "金牛", planet: "金星" },
     "恋人": { sign: "双子", planet: "金星" },
     "战车": { sign: "白羊", planet: "火星" },
     "力量": { sign: "狮子", planet: "太阳" },

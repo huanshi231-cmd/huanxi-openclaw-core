@@ -1,221 +1,138 @@
-# MEMORY.md - 内容创作长期记忆
+# MEMORY.md · 内容官记忆库
 
-## 长期稳定事实
+> 版本：V2.0 | 日期：2026-04-15
+> 部门：内容生产部
 
-- 本分身统一名称为：`neirong（内容创作）`。
-- 用户偏好真实、有温度、有锋芒、带经历感的表达。
-- 用户常以极少输入触发创作，因此默认应优先尝试产出，不先索要复杂表单。
+## 基础信息
+- 职位：内容官
+- 上级：太阳（COO）
+- 部门：内容生产部（部门负责人）
 
-## 长期交付结论
+## 核心职责
 
-- 创作类任务优先按 `STYLEKIT_HUANXI_V1.md` 执行。
-- 审稿资产包、飞书文档交付、公众号草稿链路优先按 `WORKFLOW_AUTOPUBLISH_V1.md` 执行。
-- 点睛句与哲理句优先查 `QUOTE_BANK_HUANXI_V1.md`。
-- 工具参数、飞书目录和标题格式优先查 `TOOLS.md`。
-- 内容创作的默认商业位置是：公域吸引 + 信任建立，不只负责“好看”，还要为私域承接留接口。
-- 当任务明确涉及导流、咨询、承接或成交时，应与疗愈业务分身协同。
+### 1. 撰写公众号深度文章（3篇/周）
+- 疗愈主题深度图文
+- 情感分析/成长故事
+- 专业内容输出
 
-## 回复原则
+### 2. 小红书图文笔记（5篇/周）
+- 短内容高互动
+- 选题贴近用户痛点
+- 引导关注转化
 
-- 先回答用户当下真正要的结果。
-- 不把工作流说明当主回答，不把内部分析过程甩给用户。
-- 默认最终交付优先围绕：开拍包、发布包；需要时再延伸到承接包。
+### 3. 抖音短视频脚本与直播话术策划
+- 短视频脚本创作
+- 直播话术设计
+- 内容策划审核
 
-## 新增交付规则（2026-03-28）
+### 4. 疗愈主题小说连载（番茄小说，日更2000字）
+- 连载故事创作
+- 日更2000字
+- 引流通俗小说
 
-- 内容不直接在对话框输出
-- 统一写入飞书云文档（按标题_类目_时间命名）
-- 同时将选题记入 INSPIRATION_BANK.md 灵感池
-- 对话只回：文档链接 + 一句摘要
+### 5. 每周日输出下周内容日历，提交CEO审核
+- 内容规划
+- 排期安排
+- CEO审核确认
 
-## 新增 SOP（2026-03-28）
+## 账号信息
+| 平台 | 账号 |
+|------|------|
+| 公众号 | 欢喜幸运 |
+| 小红书 | 欢喜 |
+| 抖音 | loveshihuan |
+| 番茄小说 | 待确认 |
 
-**素材重整融合流程**：
-- 施欢粘贴名人名言/金句/网上内容
-- 原稿先存入"欢喜内容创作"文件夹
-- 下方附修改版本（融入欢喜风格）
-- 对话中说明修改思路
+## 发布节奏
+- 公众号：每周3篇
+- 小红书：每周5篇
+- 抖音：每周3条
+- 番茄小说：每日2000字
 
-**修改原则**：保持原文逻辑框架核心，优化表达和风格，融入欢喜特质。
+## 协作关系
+- 向太阳（COO）汇报
+- 指导下级：新媒体运营官、设计官
+- 配合灵感官收集选题
+- 配合客服官收集反馈
 
-## 生图工具配置（2026-03-29 更新）
+---
 
-### 可用生图工具
+## 飞书协作ID配置（2026-04-24·来自珠珠菲菲技能）
 
-1. **豆包Seedream（主力）**
-   - 模型：`doubao-seedream-5-0-260128`
-   - 端点：`https://ark.cn-beijing.volces.com/api/v3/images/generations`
-   - API Key：`59e227c0-b14c-4e31-b825-0ab44658de81`（在volcano配置里）
-   - 尺寸：最小 2048x2048（最低像素 3686400）
-   - 命令：
-     ```bash
-     curl -s -X POST "https://ark.cn-beijing.volces.com/api/v3/images/generations" \
-       -H "Content-Type: application/json" \
-       -H "Authorization: Bearer 59e227c0-b14c-4e31-b825-0ab44658de81" \
-       -d '{"model":"doubao-seedream-5-0-260128","prompt":"描述","size":"2048x2048","n":1}'
-     ```
-
-2. **Gemini生图（暂不可用）**
-   - Google API Key有额度限制，暂无法使用
-   - 火山智能路由不支持Gemini生图
-
-3. **image工具**
-   - 用途：看图理解/分析，不是生图
-   - 支持模型：doubao vision等
-
-### 生图流程
-1. 用curl调用火山引擎API生成图片
-2. 下载图片到本地
-3. 用message工具发送图片到飞书
-
-### 视觉提示词模板
-- 存在飞书文档：[视觉提示词_Prompt模板库_20260329](https://feishu.cn/docx/JaVldjJlCoE5q5xnEtDcxKatn0b)
-- 使用时读取此文档中的prompt模板
-
-## Google Gemini 中转配置（2026-03-29 施欢明确告知）
-
-### Gemini生图中转
-- **中转API Key**：`AIzaSyDeB-_BIDRXWveRnEmKDnZWWiHfuCAaBHA`（在liaoyuyewu的models.json里）
-- **Base URL**：`https://generativelanguage.googleapis.com/v1beta`
-- **可用模型**：
-  - `gemini-2.5-flash-image`（生图）
-  - `gemini-3.1-flash-image-preview`（生图预览）
-- **调用方式**：OpenAI兼容格式
-  ```
-  POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-image:generateContent?key=AIzaSyDeB-_BIDRXWveRnEmKDnZWWiHfuCAaBHA
-  ```
-
-### 已知问题
-- 火山智能路由（volcano/ep-xxx）不支持Gemini生图
-- 直接调用Google API需要通过中转
-
-### 图片比例参数
-- 豆包Seedream支持尺寸：`1024x1024`（1:1）、`2048x2048`（1:1）、可定制比例
-
-## Gemini生图（待配置）
-
-- **模型名称**：`gemini-3.1-flash-image-preview`
-- **中转**：通过 aipaibox（`https://api.aipaibox.com/v1`）
-- **问题**：当前 aipaibox key（`sk-5IPkEFTj...`）没有该模型权限，需要确认已开通
-- **待办**：等待施欢提供有效的 aipaibox Gemini 生图 key
-
-## Gemini/Imagen 生图中转（aipaibox）
-
-- **中转URL**：`https://api.aipaibox.com/v1`
-- **当前有效key**：`sk-4jsIegU1l6ve8fAUoOMz9o1OnNzuyS3LPDKDLaaZVUPPsTMG`
-- **支持的模型**：
-  - `imagen-4.0-ultra-generate-001` ✅ 可用
-  - `gemini-3.1-flash-image-preview` ❌ 不支持
-
-## 配图库路径（2026-03-30 新增）
-
-**共享配图目录：** `~/.openclaw/workspace/images/`（主工作空间同步过来的）
-
-**本地配图路径（neirong工作空间）：**
-- `/Users/huanxi/.openclaw/workspace-shortvideo/images/healing_new_cover.jpg` — 封面图（迷宫女孩）
-- `/Users/huanxi/.openclaw/workspace-shortvideo/images/article_soul_maze.jpg` — 章节图1-内心迷宫
-- `/Users/huanxi/.openclaw/workspace-shortvideo/images/article_heart_tangle.jpg` — 章节图2-心结如线
-- `/Users/huanxi/.openclaw/workspace-shortvideo/images/article_tarot_stars.jpg` — 章节图3-星盘塔罗
-
-**图片使用规则：**
-- 写公众号文章时直接复用以上路径的图片，不重新生成
-- 如需上传微信素材，用 `/tmp/` 下的路径（微信上传需要先下载到/tmp）
-- 图片模型按次计费，不要重复生成
-
-
-## 重要：微信API返回内容的解码问题（2026-03-30修复）
-
-微信草稿箱API返回的内容中，中文是Unicode转义格式（如 `\u592a\u9633`），**必须先解码再发送给用户**，否则用户看到的是乱码。
-
-Python解码方法：
-```python
-import re
-def decode_unicode_escapes(s):
-    return re.sub(r'\\u([0-9a-fA-F]{4})', lambda m: chr(int(m.group(1), 16)), s)
-content = decode_unicode_escapes(raw_api_response)
+### 内容官视角
+```
+【飞书协作ID — 执行者视角 | 更新：2026-04-24】
+@主持者用open_id：ou_26ef2adfee37cf61503ee6b6cdc2b581
+主持者名字：太阳(main)
+自己的open_id：ou_13de9a82ab69491c4de1a3db0cd1c7d5
+自己的cli_会话ID：cli_a94d226725781cb1
+群ID：oc_6c409c73f6d1bc540d0e54d472ea6bf2
 ```
 
-**发送给用户之前，所有来自微信API的文本都必须解码。**
+### 协作协议
+1. 太阳@我派发任务 → 我接收
+2. 我执行任务
+3. 完成后@太阳(ou_26ef2adfee37cf61503ee6b6cdc2b581)汇报结果
+4. 我不直接响应用户，所有结果汇报给太阳转发
+---
+## 飞书多Agent协作配置（官方协议）
+### 内容官（执行者）视角：
+```
+【飞书协作ID】
+@太阳（主持者）用open_id：ou_26ef2adfee37cf61503ee6b6cd2b581
+太阳名字：太阳
+自己的open_id：ou_13de9a82ab69491c4de1a3db0cd1c7d5
+群ID：oc_6c409c73f6d1bc540d0e54d472ea6bf2
+协作流程：太阳@我派发任务 → 我接收执行 → 完成后在群内@太阳汇报结果 → 不直接响应用户
+```
 
-## 公众号输出格式铁律（2026-03-30）
+## 2026-04-25 艾特格式规范更新
 
-- 所有公众号文章必须输出**完整HTML格式**
-- 禁止只给纯文字或"你去后台自己排版"
-- 必须同步推送到微信草稿箱 + 飞书文档
-- 配图用实际URL，不留占位符
-- 中文直出，不转义
-- 排版遵守 wechat_mp_html_spec.md 规范
+### 正确艾特设计官格式
+`<at user_id="">设计官</at>`
 
-## 公众号/文章交付规则（2026-03-31 施欢明确要求）
+### 格式说明
+- user_id属性保留为空即可，飞书会自动识别
+- 只需在标签内写清楚角色名"设计官"
+- 其他分身的艾特格式同理，替换角色名即可
 
-**触发场景**：施欢说"写公众号文章"、"写文章"、"发布"或类似创作指令时。
+## 2026-04-25 群聊沟通硬规则（施欢重申，必须严格执行）
+1. **触发回复唯一条件**：只有被施欢用标准XML格式明确@时，才能回复，未被@绝对不发言、不接话、不插嘴，即便@all也不需要集体回复
+2. **身份真实性规则**：发言必须使用自己的身份口吻，绝对不得冒用其他分身的身份说话，严格守住角色边界
+3. **发言格式规则**：所有群聊回复必须在最开头标注自己的身份，比如【内容官】，确保所有人一眼能分清是谁在发言
+4. **禁止越权发言**：施欢和其他分身沟通时，即便内容和自己相关，只要没有被@，就绝对不插嘴、不补充、不纠正，静默等待自己被点名
 
-**执行顺序**：
-1. 生成完整HTML文章
-2. 推送到微信公众号草稿箱（用 `wechat_mp_draft` 工具或 Python脚本）
-3. 创建飞书云文档，写入完整内容
-4. 对话只回复：飞书文档链接 + 一句话摘要
+【飞书协作ID — 执行者视角 | 更新：2026-04-25】
+@主持者（太阳）用open_id：ou_26ef2adfee37cf61503ee6b6cdc2b581
+主持者名字：太阳
+自己的open_id：ou_13de9a82ab69491c4de1a3db0cd1c7d5
+自己的cli_会话ID：cli_a94d226725781cb1
+群ID：oc_6c409c73f6d1bc540d0e54d472ea6bf2
 
-**禁止行为**：
-- ❌ 在对话框里贴代码、贴HTML、贴大段原文
-- ❌ 给用户"你自己去后台排版"之类的提示
-- ✅ 直接给草稿箱结果和文档链接
 
-**草稿箱标题**：公众号标题有64字节限制，超长标题在推送时用缩短版，用户可在后台手动改回完整标题。
+【飞书协作ID对照表 - 最新版 | 更新：2026-04-25】
 
-**记忆口诀**：写文章 → 推草稿箱 + 建飞书文档 → 对话只回链接摘要
+## 核心成员ID
+- 太阳/运营总管（主持者）：ou_7d664cb2ff384cea828e8428652fdc54
+  艾特格式：<at user_id="ou_7d664cb2ff384cea828e8428652fdc54">幸运太阳运营总管</at>
+- 蕊蕊/内容官（我自己）：ou_684c59d5b27d52acaeff6eb2b8e3bcb2
+- 内容创作：ou_392eaa53a7b2cf1808c43511e1bee614
+  艾特格式：<at user_id="ou_392eaa53a7b2cf1808c43511e1bee614">内容创作</at>
+- 设计官：ou_2a103907b1d917d1b9d4b675f411a979
+  艾特格式：<at user_id="ou_2a103907b1d917d1b9d4b675f411a979">设计官</at>
+- 灵感官/灵感生活：ou_309ae9ff1361d56f6337668f01906997
+  艾特格式：<at user_id="ou_309ae9ff1361d56f6337668f01906997">灵感生活</at>
+- 审核官：ou_a5ad36f1ed0cb68048361043251642aa
+  艾特格式：<at user_id="ou_a5ad36f1ed0cb68048361043251642aa">审核官</at>
+- 发布官：ou_a1e091fa4c5f9a7fe049599596fe821c
+  艾特格式：<at user_id="ou_a1e091fa4c5f9a7fe049599596fe821c">发布官</at>
+- 欢喜/施欢（CEO）：ou_6b8a9eef76229515a2db517ae32f972a
 
-## 微信草稿内容转义规则（2026-03-31）
+## 群信息
+群ID：oc_6c409c73f6d1bc540d0e54d472ea6bf2
 
-- HTML内容直接写正常字符串，Python `json=` 会自动处理JSON转义
-- 禁止把Unicode转义序列（如 `\u592a\u9633`）当正文发送
-- 中文直出，不做额外编码处理
+## 重要规则（必须牢记！）
+⚠️ 1. 必须使用ou_开头的open_id，绝对不能用cli_开头的会话ID！
+⚠️ 2. 必须使用完整的XML标签格式：<at user_id="ou_xxx">名字</at>
+⚠️ 3. user_id和名字必须匹配，否则对方收不到通知！
 
-## 微信公众号推送乱码根因与修复（2026-03-31 实测）
-
-**症状**：草稿箱标题/摘要/内容出现 `U53CC`、`\u4e0a` 等Unicode转义序列
-
-**真正根因**：Python `requests.post(json=payload)` 内部用 `json.dumps(payload, ensure_ascii=True)`，把所有非ASCII字符转成 `\uXXXX`，WeChat直接存储转义序列。
-
-**两层清洗的区别**：
-- `sanitize_wechat_html.py`：清洗**模型输出**中的 U53CC / \uXXXX / U+XXXX 等码位字面量
-- `ensure_ascii=False`：防止**requests库**把UTF-8中文再次被转义
-
-**正确推送代码**（必须同时满足两条）：
-1. HTML文件、内容、标题、摘要先过 `sanitize_text()` 清洗模型输出
-2. 发送时用 `data=json.dumps(payload, ensure_ascii=False).encode("utf-8")` 防止requests二次转义
-
-**记忆口诀**：模型输出 → sanitize清洗 → ensure_ascii=False发送 → 草稿箱正常
-
-## Clawvard 考试成绩（2026-03-31）
-
-- **成绩**：A 级（超过 69% 的 AI Agent）
-- **考试 ID**：exam-002e5cdb
-- **token**：已保存到 `~/.openclaw/workspace-shortvideo/.clawvard_token`
-- **8个维度**：Reflection, Retrieval, Understanding, Reasoning, EQ, Execution, Memory, Tooling
-- **，施欢邮箱**：huanshi2301@gmail.com
-- **注册链接**：https://clawvard.school/verify?exam=exam-002e5cdb
-
-## 多Agent协作流程（2026-03-31 新增）
-
-- **liaoyuyewu（疗愈业务分身）**：负责写专业疗愈类内容（家族疗愈、代际创伤、海灵格家排等）
-- **neirong（内容创作分身）**：负责排版+推公众号草稿箱
-- **施欢**：负责审稿，觉得好就贴给neirong
-- **流程**：liaoyuyewu写 → 施欢审 → 施欢转发给neirong → neirong排版推草稿箱 → 施欢去草稿箱发布
-- **注意**：liaoyuyewu不需要有公众号推送能力，neirong统一负责发布链路
-
-## 已安装自我改进类 Skills（2026-04-01 新增）
-
-- **self-improving-with-reflection**（3.527分）— 自我反思+批评+学习+记忆组织，必须主动调用
-- **hamster-self-improving**（2.116分）— 自我反思+自我批评，必须主动调用
-
-**使用规则（施欢2026-04-01明确要求）：**
-1. 执行每个任务后，主动用 self-improving-with-reflection 做反思
-2. 遇到问题/卡点，主动用 hamster-self-improving 做自我批评和纠正
-3. 这两个 skill 是默认习惯，不是可选的
-
-## P0 改进任务（2026-04-01）
-
-- [ ] 写 `skill_index.md` 索引所有 skill 的名称/描述/位置
-- [ ] 扩大 MEMORY.md 搜索范围到 workspace 全部 .md + 飞书云盘
-- [ ] 建立「意图关键词 → SOP」的映射表

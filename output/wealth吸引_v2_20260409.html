@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>财富吸引 · 欢喜</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans SC', sans-serif; overflow: hidden; }
+    .slides-container { width: 100vw; height: 100vh; background: #0a0a0f; }
+    .slide {
+      width: 100%; height: 100%;
+      aspect-ratio: 16/9;
+      position: absolute; inset: 0;
+      display: none; flex-direction: column;
+      opacity: 0; transition: opacity 0.6s ease;
+    }
+    .slide.active { display: flex; opacity: 1; }
+    /* 进度 */
+    .progress-bar { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 200; }
+    .progress-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.2); cursor: pointer; transition: all 0.3s; }
+    .progress-dot.active { background: #c084fc; transform: scale(1.4); box-shadow: 0 0 12px rgba(192,132,252,0.7); }
+    .page-number { position: fixed; bottom: 24px; right: 32px; font-size: 0.8rem; color: rgba(255,255,255,0.3); z-index: 200; }
+  </style>
+</head>
+<body>
+<div class="slides-container">
+
+<!-- S1: 封面 -->
+<div class="slide active" style="background: linear-gradient(135deg, #1a0a2e 0%, #0f0a1e 100%);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%, rgba(139,92,246,0.25) 0%, transparent 60%), radial-gradient(ellipse at 30% 80%, rgba(236,72,153,0.2) 0%, transparent 50%);"></div>
+  <div style="position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#8b5cf6,#ec4899,#8b5cf6);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%;max-width:900px;">
+    <div style="font-size:1rem;letter-spacing:0.4em;color:rgba(192,132,252,0.7);margin-bottom:2rem;text-transform:uppercase;">沙龙特辑 · 2024</div>
+    <div style="font-size:1rem;margin-bottom:1.5rem;color:rgba(255,255,255,0.5);">💎</div>
+    <h1 style="font-size:4.5rem;font-weight:900;color:#fff;line-height:1.1;margin-bottom:1.5rem;text-shadow:0 0 60px rgba(139,92,246,0.5);">财富吸引</h1>
+    <div style="width:80px;height:2px;background:linear-gradient(90deg,transparent,#c084fc,transparent);margin:0 auto 1.5rem;"></div>
+    <p style="font-size:1.3rem;color:rgba(255,255,255,0.55);letter-spacing:0.15em;">从恐惧频率 → 爱的频率</p>
+    <p style="margin-top:3rem;font-size:0.9rem;color:rgba(255,255,255,0.35);letter-spacing:0.2em;">欢喜 · 18年疗愈经验</p>
+  </div>
+</div>
+
+<!-- S2: 核心 -->
+<div class="slide" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%, rgba(59,130,246,0.2) 0%, transparent 50%);"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#3b82f6,#06b6d4);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%;max-width:900px;">
+    <p style="font-size:1rem;letter-spacing:0.4em;color:rgba(59,130,246,0.7);margin-bottom:2rem;">THE CORE TRUTH</p>
+    <h1 style="font-size:4rem;font-weight:900;color:#fff;line-height:1.2;margin-bottom:2rem;">你不是缺钱<br><span style="color:#60a5fa;">你是缺频率</span></h1>
+    <p style="font-size:1.2rem;color:rgba(255,255,255,0.55);line-height:1.8;">钱不是追来的，是调频调出来的<br>当你的频率对了，钱自己会来</p>
+  </div>
+</div>
+
+<!-- S3: 两种频率 -->
+<div class="slide" style="background:#0a0a0f;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(139,92,246,0.08) 0%, transparent 70%);"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#ef4444,#f59e0b,#22c55e,#3b82f6);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;max-width:1000px;">
+    <h1 style="font-size:2.8rem;font-weight:900;color:#fff;margin-bottom:2.5rem;text-align:center;">两种频率 · 两种结局</h1>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+      <div style="background:linear-gradient(135deg,rgba(239,68,68,0.15),rgba(239,68,68,0.05));border:1px solid rgba(239,68,68,0.3);border-radius:20px;padding:2.5rem;">
+        <div style="font-size:0.8rem;letter-spacing:0.2em;color:#f87171;margin-bottom:1rem;">FEAR FREQUENCY · 100</div>
+        <div style="font-size:2rem;font-weight:700;color:#fff;margin-bottom:1rem;">盯着余额</div>
+        <div style="color:rgba(255,255,255,0.5);line-height:2;font-size:1rem;">
+          焦虑 · 紧缩 · 收缩<br>
+          能量向内塌陷<br>
+          财富管道关闭
+        </div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(239,68,68,0.3);color:#f87171;font-size:1.1rem;font-weight:700;">= 绝缘</div>
+      </div>
+      <div style="background:linear-gradient(135deg,rgba(168,85,247,0.15),rgba(168,85,247,0.05));border:1px solid rgba(168,85,247,0.3);border-radius:20px;padding:2.5rem;">
+        <div style="font-size:0.8rem;letter-spacing:0.2em;color:#c084fc;margin-bottom:1rem;">LOVE FREQUENCY · 500</div>
+        <div style="font-size:2rem;font-weight:700;color:#fff;margin-bottom:1rem;">盯着价值</div>
+        <div style="color:rgba(255,255,255,0.5);line-height:2;font-size:1rem;">
+          扩张 · 喜悦 · 本自具足<br>
+          能量向外流动<br>
+          财富主动靠近
+        </div>
+        <div style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid rgba(168,85,247,0.3);color:#c084fc;font-size:1.1rem;font-weight:700;">= 磁铁</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S4: 金句 -->
+<div class="slide" style="background:linear-gradient(135deg,#1e0a2e 0%,#2d1b4e 100%);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%, rgba(192,132,252,0.2) 0%, transparent 60%);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%;max-width:900px;">
+    <div style="font-size:8rem;color:rgba(192,132,252,0.15);line-height:1;margin-bottom:1rem;">"</div>
+    <h1 style="font-size:3.8rem;font-weight:900;color:#fff;line-height:1.2;margin-bottom:2rem;">你盯着什么<br>你就成为什么</h1>
+    <div style="display:inline-flex;gap:2rem;padding:1rem 2.5rem;background:rgba(255,255,255,0.05);border-radius:100px;border:1px solid rgba(255,255,255,0.1);">
+      <span style="color:rgba(255,255,255,0.4);font-size:1.1rem;">盯着余额 → <span style="color:#f87171;">匮乏</span></span>
+      <span style="color:rgba(255,255,255,0.3);">|</span>
+      <span style="color:rgba(255,255,255,0.4);font-size:1.1rem;">盯着价值 → <span style="color:#c084fc;">丰盛</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- S5: 身体GPS -->
+<div class="slide" style="background:linear-gradient(135deg,#0c1929 0%,#1a2744 100%);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 70% 60%, rgba(6,182,212,0.15) 0%, transparent 50%);"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#06b6d4,#0ea5e9);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%;max-width:900px;">
+    <div style="font-size:5rem;margin-bottom:1.5rem;">🔬</div>
+    <h1 style="font-size:3.5rem;font-weight:900;color:#fff;margin-bottom:2rem;">身体知道答案</h1>
+    <p style="font-size:1.3rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:2rem;">
+      想象银行卡只剩100块，明天要交房租——<br>
+      <strong style="color:#fff;font-weight:700;">身体哪个部位最先紧缩？</strong>
+    </p>
+    <div style="display:inline-block;padding:1rem 2rem;background:rgba(6,182,212,0.1);border:1px solid rgba(6,182,212,0.3);border-radius:12px;">
+      <p style="color:#22d3ee;font-size:1.1rem;">那里，就是你财富卡点的GPS坐标</p>
+    </div>
+  </div>
+</div>
+
+<!-- S6: 50万测试 -->
+<div class="slide" style="background:linear-gradient(135deg,#1a0a2e 0%,#0f0a1e 100%);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 30% 70%, rgba(236,72,153,0.2) 0%, transparent 50%);"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#ec4899,#f472b6);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%;max-width:900px;">
+    <div style="font-size:5rem;margin-bottom:1.5rem;">💰</div>
+    <h1 style="font-size:3.5rem;font-weight:900;color:#fff;margin-bottom:2rem;">给你50万<br><span style="color:#f472b6;">你的第一反应是？</span></h1>
+    <p style="font-size:1.2rem;color:rgba(255,255,255,0.5);line-height:2;margin-bottom:2rem;">
+      松一口气？<br>
+      还是——怎么存、怎么藏、万一丢了怎么办？
+    </p>
+    <div style="background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.3);border-radius:16px;padding:1.5rem 2rem;max-width:600px;margin:0 auto;">
+      <p style="color:#fff;font-size:1.15rem;font-weight:700;margin-bottom:0.5rem;">如果第一反应是担心</p>
+      <p style="color:#c084fc;font-size:1.1rem;">→ 你没有"承载财富的容器"</p>
+      <p style="color:rgba(255,255,255,0.4);font-size:0.95rem;margin-top:0.5rem;">你在用一个漏水的桶接水，接多少都会流干</p>
+    </div>
+  </div>
+</div>
+
+<!-- S7: 塔罗 -->
+<div class="slide" style="background:#0a0a0f;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 30%, rgba(245,158,11,0.1) 0%, transparent 50%);"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#f59e0b,#eab308);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;max-width:1100px;">
+    <div style="text-align:center;margin-bottom:2rem;">
+      <div style="font-size:4rem;margin-bottom:0.5rem;">🎴</div>
+      <h1 style="font-size:2.8rem;font-weight:900;color:#fff;">塔罗显影 · 财富拦路虎</h1>
+      <p style="color:rgba(255,255,255,0.4);font-size:1rem;margin-top:0.5rem;">身体报错是"果"，潜意识木马是"因"</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;">
+      <div style="background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.25);border-radius:16px;padding:1.8rem 1.2rem;text-align:center;">
+        <div style="font-size:2.2rem;margin-bottom:0.8rem;">👿</div>
+        <div style="font-weight:700;color:#fff;font-size:1.1rem;margin-bottom:0.5rem;">恶魔</div>
+        <div style="color:rgba(255,255,255,0.45);font-size:0.85rem;line-height:1.6;">金钱的囚徒<br>为钱工作</div>
+        <div style="margin-top:0.8rem;color:#f87171;font-size:0.85rem;">→ 拿回主权</div>
+      </div>
+      <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:16px;padding:1.8rem 1.2rem;text-align:center;">
+        <div style="font-size:2.2rem;margin-bottom:0.8rem;">👑</div>
+        <div style="font-weight:700;color:#fff;font-size:1.1rem;margin-bottom:0.5rem;">皇帝</div>
+        <div style="color:rgba(255,255,255,0.45);font-size:0.85rem;line-height:1.6;">太想掌控<br>每分钱锁死</div>
+        <div style="margin-top:0.8rem;color:#fbbf24;font-size:0.85rem;">→ 放开手</div>
+      </div>
+      <div style="background:rgba(34,211,238,0.08);border:1px solid rgba(34,211,238,0.25);border-radius:16px;padding:1.8rem 1.2rem;text-align:center;">
+        <div style="font-size:2.2rem;margin-bottom:0.8rem;">🔄</div>
+        <div style="font-weight:700;color:#fff;font-size:1.1rem;margin-bottom:0.5rem;">倒吊人</div>
+        <div style="color:rgba(255,255,255,0.45);font-size:0.85rem;line-height:1.6;">赚钱必须吃苦<br>自我牺牲</div>
+        <div style="margin-top:0.8rem;color:#22d3ee;font-size:0.85rem;">→ 价值才值钱</div>
+      </div>
+      <div style="background:rgba(168,85,247,0.08);border:1px solid rgba(168,85,247,0.25);border-radius:16px;padding:1.8rem 1.2rem;text-align:center;">
+        <div style="font-size:2.2rem;margin-bottom:0.8rem;">🌙</div>
+        <div style="font-weight:700;color:#fff;font-size:1.1rem;margin-bottom:0.5rem;">月亮</div>
+        <div style="color:rgba(255,255,255,0.45);font-size:0.85rem;line-height:1.6;">总担心破产<br>被恐惧吓死</div>
+        <div style="margin-top:0.8rem;color:#c084fc;font-size:0.85rem;">→ 当下即底气</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S8: 恐惧税 -->
+<div class="slide" style="background:linear-gradient(135deg,#2d1b1b 0%,#1a0a0a 100%);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%, rgba(239,68,68,0.15) 0%, transparent 50%);"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#ef4444,#f97316);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%;max-width:900px;">
+    <div style="font-size:5rem;margin-bottom:1.5rem;">💸</div>
+    <h1 style="font-size:3.5rem;font-weight:900;color:#fff;line-height:1.2;margin-bottom:1.5rem;">这些年<br>你交了多少钱的<br><span style="color:#f87171;">恐惧税</span>？</h1>
+    <p style="font-size:1.2rem;color:rgba(255,255,255,0.55);line-height:1.8;">
+      不敢要价 · 不敢投资 · 在机会面前畏缩<br>
+      <strong style="color:#fff;font-weight:700;">这些都是你付给潜意识木马的隐形税</strong>
+    </p>
+  </div>
+</div>
+
+<!-- S9: 觉察≠清理 -->
+<div class="slide" style="background:linear-gradient(135deg,#1a2744 0%,#0f1d32 100%);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(251,191,36,0.1) 0%, transparent 60%);"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#eab308,#f59e0b);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%;max-width:900px;">
+    <div style="font-size:5rem;margin-bottom:1.5rem;">💡</div>
+    <h1 style="font-size:3.5rem;font-weight:900;color:#fff;margin-bottom:2rem;">觉察 <span style="color:rgba(255,255,255,0.3);">≠</span> 清理</h1>
+    <p style="font-size:1.3rem;color:rgba(255,255,255,0.55);line-height:2;margin-bottom:1.5rem;">
+      塔罗帮你打开灯，照见垃圾。<br>
+      看清楚垃圾在哪，<strong style="color:#fff;font-weight:700;">不等于垃圾消失</strong>。
+    </p>
+    <div style="background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.3);border-radius:14px;padding:1.5rem 2rem;max-width:600px;margin:0 auto;">
+      <p style="color:#fbbf24;font-size:1.1rem;font-weight:700;">那堆垃圾在潜意识里堆了二三十年</p>
+      <p style="color:rgba(255,255,255,0.5);font-size:1rem;margin-top:0.5rem;">你需要专业的力量，帮你彻底删除</p>
+    </div>
+  </div>
+</div>
+
+<!-- S10: 创造模式 -->
+<div class="slide" style="background:linear-gradient(135deg,#1a0a2e 0%,#2d1b4e 50%,#1a0a2e 100%);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(192,132,252,0.15) 0%, transparent 60%);"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#c084fc,#ec4899);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%;max-width:900px;">
+    <h1 style="font-size:3.5rem;font-weight:900;color:#fff;margin-bottom:2rem;">爱 = 创造模式</h1>
+    <div style="display:flex;align-items:center;justify-content:center;gap:2rem;margin-bottom:2rem;">
+      <div style="background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);border-radius:12px;padding:1.2rem 1.8rem;">
+        <p style="color:#f87171;font-weight:700;margin-bottom:0.3rem;">恐惧</p>
+        <p style="color:rgba(255,255,255,0.5);font-size:0.9rem;">硬抗执行 → 萎缩</p>
+      </div>
+      <div style="font-size:2rem;color:rgba(255,255,255,0.3);">→</div>
+      <div style="background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.3);border-radius:12px;padding:1.2rem 1.8rem;">
+        <p style="color:#c084fc;font-weight:700;margin-bottom:0.3rem;">热爱</p>
+        <p style="color:rgba(255,255,255,0.5);font-size:0.9rem;">价值交付 → 扩张</p>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.5rem 2rem;max-width:650px;margin:0 auto;">
+      <p style="color:#fff;font-weight:700;font-size:1.1rem;margin-bottom:0.5rem;">财富的真相</p>
+      <p style="color:rgba(255,255,255,0.55);font-size:1rem;line-height:1.8;">"爱"在商业 = 极致的价值交付<br>在能量 = 无限的扩张感</p>
+    </div>
+  </div>
+</div>
+
+<!-- S11: 科学 -->
+<div class="slide" style="background:#0a0a0f;">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(99,102,241,0.1) 0%, transparent 60%);"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#6366f1,#8b5cf6);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:90%;max-width:1000px;">
+    <div style="text-align:center;margin-bottom:2rem;">
+      <h1 style="font-size:2.8rem;font-weight:900;color:#fff;margin-bottom:0.5rem;">这不是玄学 · 这是<span style="color:#a78bfa;">物理学</span></h1>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;">
+      <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.25);border-radius:16px;padding:2rem;">
+        <div style="font-size:0.8rem;letter-spacing:0.2em;color:#818cf8;margin-bottom:1rem;">EINSTEIN</div>
+        <p style="color:rgba(255,255,255,0.85);font-size:1.05rem;line-height:1.7;font-style:italic;">"一切都是能量。匹配你想要的频率，你就能得到那种现实。"</p>
+      </div>
+      <div style="background:rgba(139,92,246,0.08);border:1px solid rgba(139,92,246,0.25);border-radius:16px;padding:2rem;">
+        <div style="font-size:0.8rem;letter-spacing:0.2em;color:#c084fc;margin-bottom:1rem;">HAWKINS SCALE</div>
+        <div style="color:rgba(255,255,255,0.85);font-size:1.05rem;line-height:2;">
+          恐惧 = <span style="color:#f87171;font-weight:700;">100</span><br>
+          爱 = <span style="color:#c084fc;font-weight:700;">500</span>
+        </div>
+        <p style="color:rgba(255,255,255,0.4);font-size:0.9rem;margin-top:1rem;">用100分追500分，物理上不成立</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- S12: SRT -->
+<div class="slide" style="background:linear-gradient(135deg,#1a0a2e 0%,#2d1b4e 100%);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%, rgba(236,72,153,0.2) 0%, transparent 55%);"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#ec4899,#f472b6);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%;max-width:900px;">
+    <div style="font-size:5rem;margin-bottom:1.5rem;">✨</div>
+    <h1 style="font-size:3.5rem;font-weight:900;color:#fff;margin-bottom:1.5rem;">SRT深度清理</h1>
+    <p style="font-size:1.3rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:1.5rem;">
+      彻底删除恐惧木马程序<br>
+      打开财富能量管道
+    </p>
+    <p style="color:rgba(255,255,255,0.45);font-size:1rem;">当你的管道通了，钱只是能量的副产品</p>
+  </div>
+</div>
+
+<!-- S13: 结尾 -->
+<div class="slide" style="background:linear-gradient(135deg,#1a0a2e 0%,#0f0a1e 50%,#1a0a2e 100%);">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 40%, rgba(192,132,252,0.25) 0%, transparent 60%), radial-gradient(ellipse at 30% 80%, rgba(236,72,153,0.15) 0%, transparent 40%);"></div>
+  <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#8b5cf6,#ec4899,#8b5cf6);"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;width:90%;max-width:900px;">
+    <div style="font-size:8rem;color:rgba(192,132,252,0.12);line-height:1;margin-bottom:1rem;">"</div>
+    <h1 style="font-size:3.5rem;font-weight:900;color:#fff;line-height:1.2;margin-bottom:1.5rem;">
+      当你成为<br><span style="background:linear-gradient(90deg,#c084fc,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">那个磁场本身</span>
+    </h1>
+    <p style="font-size:1.3rem;color:rgba(255,255,255,0.6);line-height:1.8;margin-bottom:2rem;">你不需要追钱<br>钱会像闻到花香的蝴蝶，疯狂地扑向你</p>
+    <div style="width:60px;height:2px;background:linear-gradient(90deg,transparent,#c084fc,transparent);margin:0 auto 1.5rem;"></div>
+    <p style="color:rgba(255,255,255,0.35);font-size:0.95rem;letter-spacing:0.2em;">欢喜 · 18年 · 3000+小时</p>
+  </div>
+</div>
+
+</div>
+
+<div class="progress-bar" id="progressBar"></div>
+<div class="page-number" id="pageNumber"></div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const progressBar = document.getElementById('progressBar');
+const pageNumber = document.getElementById('pageNumber');
+let currentSlide = 0;
+slides.forEach((_, i) => { const d = document.createElement('div'); d.className = `progress-dot ${i===0?'active':''}`; d.onclick = () => go(i); progressBar.appendChild(d); });
+function update() {
+  slides.forEach((s,i) => { s.style.display='none'; s.style.opacity='0'; if(i===currentSlide){ s.style.display='flex'; setTimeout(()=>s.style.opacity='1',20); } });
+  document.querySelectorAll('.progress-dot').forEach((d,i) => d.classList.toggle('active', i===currentSlide));
+  pageNumber.textContent = `${String(currentSlide+1).padStart(2,'0')} / ${slides.length}`;
+}
+function next() { if(currentSlide < slides.length-1) { currentSlide++; update(); } }
+function prev() { if(currentSlide > 0) { currentSlide--; update(); } }
+function go(i) { currentSlide = i; update(); }
+document.addEventListener('keydown', e => { if(e.key==='ArrowRight'||e.key===' ') next(); else if(e.key==='ArrowLeft') prev(); });
+document.addEventListener('touchstart', e => { window._tx = e.touches[0].clientX; });
+document.addEventListener('touchend', e => { const d = window._tx - e.changedTouches[0].clientX; if(Math.abs(d)>50) d>0?next():prev(); });
+update();
+</script>
+</body>
+</html>

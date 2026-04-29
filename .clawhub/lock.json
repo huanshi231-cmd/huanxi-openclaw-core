@@ -36,6 +36,30 @@
     "video-editing-with-ai": {
       "version": "1.0.1",
       "installedAt": 1775570209318
+    },
+    "tarot-spreads": {
+      "version": "1.0.0",
+      "installedAt": 1775731031168
+    },
+    "tarot-reading": {
+      "version": "1.2.0",
+      "installedAt": 1775731035548
+    },
+    "ppt-generator": {
+      "version": "1.0.0",
+      "installedAt": 1775742614893
+    },
+    "minimax-music-generate": {
+      "version": "1.0.0",
+      "installedAt": 1775748610774
+    },
+    "jianying": {
+      "version": "0.1.0",
+      "installedAt": 1775914441660
+    },
+    "jianying-auto-editor": {
+      "version": "0.1.1",
+      "installedAt": 1775914540123
     }
   }
 }
