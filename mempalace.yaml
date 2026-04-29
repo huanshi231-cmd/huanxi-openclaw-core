@@ -1,0 +1,12 @@
+wing: workspace_xinmeiyunying
+rooms:
+- name: memory
+  description: Files from memory/
+- name: daily_log
+  description: Files from daily_log/
+- name: knowledge
+  description: Files from knowledge/
+- name: skills
+  description: Files from skills/
+- name: general
+  description: Files that don't fit other rooms
