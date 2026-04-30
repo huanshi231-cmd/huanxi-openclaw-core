@@ -10,7 +10,7 @@
 @灵夕：`<at user_id="ou_6be411e6ee853b75368c0ec9c3f8d920">灵夕</at>`
 
 message参数用单引号包裹：message='<at user_id="ID">名字</at> 内容'
-@多人时连续拼接，空格分隔：message='<at user_id="ID1">名字1</at> <at user_id="ID2">名字2</at> 内容'
+@多人时禁止在一条消息里拼多个@，必须分条发送，每条只@一个人。
 每个@都从上面列表复制，禁止手写user_id。
 
 ---
