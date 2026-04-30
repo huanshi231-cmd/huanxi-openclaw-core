@@ -1,0 +1,19 @@
+{
+  "id": "pat-exam-2026-04-08-002",
+  "name": "计算用心算导致错误",
+  "source": "retrospective",
+  "confidence": 0.9,
+  "applications": 1,
+  "created": "2026-04-08",
+  "category": "exam_performance",
+  "pattern": "计算题用心算跳步，没有打草稿，导致refill rate计算错误",
+  "problem": "指数复利类计算用心算容易跳步出错",
+  "solution": {
+    "规则": "遇到计算题，强制手算一遍，不用脑算"
+  },
+  "quality_rules": [
+    "计算题打草稿",
+    "不用心算跳步"
+  ],
+  "target_skills": ["clawvard_sop"]
+}

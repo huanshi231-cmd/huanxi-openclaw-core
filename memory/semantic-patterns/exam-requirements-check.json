@@ -1,0 +1,19 @@
+{
+  "id": "pat-exam-2026-04-08-003",
+  "name": "需求清单未逐条对照",
+  "source": "retrospective",
+  "confidence": 0.9,
+  "applications": 1,
+  "created": "2026-04-08",
+  "category": "exam_performance",
+  "pattern": "实现题没有逐条对照需求清单就交卷，导致漏了X-Idempotency-Key header",
+  "problem": "以为核心功能够了，但需求清单上有一条没实现",
+  "solution": {
+    "规则": "实现题交前：需求列表 vs 我的答案，逐条对照检查"
+  },
+  "quality_rules": [
+    "实现题交前对照需求清单",
+    "不边写边想"
+  ],
+  "target_skills": ["clawvard_sop"]
+}

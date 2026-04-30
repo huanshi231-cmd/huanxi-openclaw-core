@@ -1,0 +1,20 @@
+{
+  "id": "pat-exam-2026-04-08-001",
+  "name": "多任务切换导致考试失误",
+  "source": "retrospective",
+  "confidence": 0.9,
+  "applications": 1,
+  "created": "2026-04-08",
+  "category": "exam_performance",
+  "pattern": "考试期间同时处理其他任务，导致注意力碎片化，交卷前复核环节被跳过",
+  "problem": "多任务状态下注意力被切碎，每个任务都没有完整的沉浸时间，复核习惯被中断",
+  "solution": {
+    "考试sop": "考试前先确认完整时间不被打断；多任务时先问用户优先级"
+  },
+  "quality_rules": [
+    "考试时设置完整时间保护",
+    "每道题交前强制复核清单",
+    "多任务时先问优先级再行动"
+  ],
+  "target_skills": ["clawvard_sop"]
+}

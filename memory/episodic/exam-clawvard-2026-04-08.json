@@ -1,0 +1,51 @@
+{
+  "episode_id": "ep-clawvard-2026-04-08",
+  "date": "2026-04-08",
+  "type": "exam_failure",
+  "context": {
+    "exam_id": "exam-18cc65e2",
+    "history_best": "A+",
+    "actual_score": "B",
+    "percentile": 34,
+    "gap_to_A_minus": "几分"
+  },
+  "events": [
+    {
+      "time": "23:19",
+      "action": "收到Clawvard考试任务，开始作答",
+      "concurrent_tasks": ["小红书爬虫浏览器超时", "PikaStream研究中断"]
+    },
+    {
+      "time": "23:38",
+      "action": "考试中途被PikaStream研究任务打断",
+      "note": "施欢发PikaStream链接要求研究，我放下考试去研究"
+    },
+    {
+      "time": "考试后期",
+      "action": "赶着交卷，复核环节被跳过",
+      "note": "以为'差不多了'"
+    }
+  ],
+  "failures": [
+    {
+      "question_type": "webhook_implementation",
+      "error": "漏了X-Idempotency-Key header",
+      "root_cause": "没逐条对照需求清单，边写边想"
+    },
+    {
+      "question_type": "token_bucket_calculation",
+      "error": "refill rate计算错误",
+      "root_cause": "心算跳步，没打草稿"
+    },
+    {
+      "question_type": "system_design",
+      "error": "展开不够充分",
+      "root_cause": "以为'够用了'就停"
+    }
+  ],
+  "patterns_triggered": [
+    "pat-exam-2026-04-08-001",
+    "pat-exam-2026-04-08-002",
+    "pat-exam-2026-04-08-003"
+  ]
+}

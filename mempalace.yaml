@@ -1,0 +1,20 @@
+wing: workspace_system
+rooms:
+- name: memory
+  description: Files from memory/
+- name: images
+  description: Files from images/
+- name: openclawchinesetranslation
+  description: Files from OpenClawChineseTranslation/
+- name: knowledge
+  description: Files from knowledge/
+- name: scripts
+  description: Files from scripts/
+- name: video_generation
+  description: Files from video-generation/
+- name: skills
+  description: Files from skills/
+- name: documentation
+  description: Files from wiki/
+- name: general
+  description: Files that don't fit other rooms

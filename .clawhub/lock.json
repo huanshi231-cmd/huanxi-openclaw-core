@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "skills": {
+    "office-hours": {
+      "version": "1.0.0",
+      "installedAt": 1775302819462
+    },
+    "daily-review-ritual": {
+      "version": "1.0.0",
+      "installedAt": 1775302971285
+    },
+    "plan-my-day": {
+      "version": "1.0.0",
+      "installedAt": 1775302981854
+    },
+    "graphic-design": {
+      "version": "1.0.0",
+      "installedAt": 1775302983766
+    },
+    "qa-patrol": {
+      "version": "1.0.3",
+      "installedAt": 1775303102597
+    },
+    "self-review": {
+      "version": "1.0.0",
+      "installedAt": 1775303162181
+    },
+    "daily-hot-push": {
+      "version": "1.0.0",
+      "installedAt": 1775430142460
+    },
+    "content-writer": {
+      "version": "1.0.0",
+      "installedAt": 1775430142935
+    }
+  }
+}
