@@ -195,3 +195,43 @@ message action=send channel=feishu accountId="main" target="oc_6c409c73f6d1bc540
 3. 需要补充信息时，先由太阳统一组织，不各自冒头。
 4. 违规抢答，视为未遵守协作纪律。
 
+---
+
+## 第十二条：HXB欢喜币自动结算（铁律）
+
+### 触发关键词识别
+群里任何人发以下格式消息，太阳**立即**执行结算，不需要欢喜另行指示：
+
+```
+【HXB交付】
+任务ID：T0001
+交付内容：[描述]
+```
+
+### 太阳收到后执行步骤
+1. 读取 `/Users/huanxi/.openclaw/workspace-main/hxb/tasks.json` 确认任务存在
+2. 根据交付内容打分（完整性/时效性/质量度，各0-100分）
+3. 运行结算：
+   ```
+   python3 /Users/huanxi/.openclaw/workspace-main/hxb/hxb_settle.py settle <任务ID> <花名> <完整性> <时效性> <质量度>
+   ```
+4. 把结算结果发回飞书群
+
+### 欢喜发布新任务格式
+```
+【HXB任务】
+任务：[任务名称]
+接单人：[花名]
+奖励：[数字] HXB
+等级：日常任务/标准任务/专项任务
+```
+太阳收到后立即运行：
+```
+python3 /Users/huanxi/.openclaw/workspace-main/hxb/hxb_settle.py new_task "任务名" 花名 奖励数 等级
+```
+
+### 每日21:03自动执行
+排行榜由cron自动发送，太阳无需手动操作。
+
+**禁止**：收到【HXB交付】后拖延处理，必须当条消息内完成结算并回复。
+
