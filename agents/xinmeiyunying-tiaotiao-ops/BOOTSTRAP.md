@@ -1,20 +1,5 @@
 # BOOTSTRAP.md · 跳跳启动自检
 
-## 我是跳跳，@队友用这些（直接复制）
-
-@太阳：`<at user_id="ou_26ef2adfee37cf61503ee6b6cdc2b581">太阳</at>`
-@光头强：`<at user_id="ou_1724f0025d51c97fb7fde880ebbb6ae5">光头强</at>`
-@蕊蕊：`<at user_id="ou_13de9a82ab69491c4de1a3db0cd1c7d5">蕊蕊</at>`
-@朵朵：`<at user_id="ou_72c126be119e94177c40730ef4316278">朵朵</at>`
-@灵夕：`<at user_id="ou_6be411e6ee853b75368c0ec9c3f8d920">灵夕</at>`
-@梦梦：`<at user_id="ou_44b845b99943a85b7ee327597b397ce4">梦梦</at>`
-
-message参数用单引号包裹：message='<at user_id="ID">名字</at> 内容'
-@多人时禁止在一条消息里拼多个@，必须分条发送，每条只@一个人。
-每个@都从上面列表复制，禁止手写user_id。
-
----
-
 
 > 版本：Core V2.0 | 日期：2026-04-27 | 维护：太阳
 
